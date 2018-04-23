@@ -6,7 +6,8 @@
 	<meta name="description" content="CS 4331-002 Special Topics in CS: Virtual Reality - Project 3">
 	<meta name="keywords" content="Virtual,Reality,Project">
 	<meta name="author" content="Xujia Wu and Simon Woldemichael">
-
+	
+	<!--a-frame-materials keyboard has only been tested with A-Frame v0.6.1-->
 	<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
 	<script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
 	<script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
@@ -14,6 +15,7 @@
 
 	<script type="text/javascript">
 		AFRAME.ASSETS_PATH = "./assets";
+		var search_query = '';
 	</script>
 
 	</head>
@@ -21,50 +23,58 @@
 		<a-scene>
 			<a-entity laser-controls="hand: right"></a-entity>
 
-			<a-entity> 
-				<a-camera look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera>
-			</a-entity>
+			<!-- Setup skybox gradient-->
+			<a-gradient-sky material="shader: gradient; topColor: 0 0 204; bottomColor: 0 153 255;"></a-gradient-sky>
 
-			<!-- BEGIN INPUTS/KEYBOARD -->
+			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking)-->
+			<a-camera raycaster="far: 150; objects: .intersectable" look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera>
+
+			<!-- Make keyboard and display an input box for search query -->
 			<a-keyboard></a-keyboard>
-			<a-input position="-0.7 1 -2.5" placeholder="Username" color="black" width="1"></a-input>
-			<a-input position="-0.7 0.8 -2.5" type="password" placeholder="Password" color="black" width="1"></a-input>
-			<!-- END INPUTS/KEYBOARD -->
+			<a-input position="-.183 1.085 -0.853" placeholder="Search" color="black" width="1"></a-input>
 
-			<!-- BEGIN FORM -->
+			<!-- Help display form-->
 			<a-rounded position="0.5 0.5 -2.5" width="4" height="3.1" radius="0.05" rotation="0 -20 0" scale="0.3 0.3 0.3">
 				<a-form>
-					<a-switch position="0.2 2.7 0" enabled="true"></a-switch>
-					<a-radio position="0.2 2.4 0" width="3" name="food" label="Burger with fries and pizza" value="pizza"></a-radio>
-					<a-radio position="0.2 2.1 0" width="3" name="food" label="Veggies" checked="true" disabled="true"></a-radio>
-					<a-radio position="0.2 1.8 0" width="3" name="food" label="Ice cream"></a-radio>
-					<a-checkbox position="0.2 1.5 0" width="3" name="stuff" label="I am a checkbox" checked="true"></a-checkbox>
-					<a-checkbox position="0.2 1.2 0" width="3" name="stuff" label="And I am another one" checked="true" disabled="true"></a-checkbox>
 					<a-button position="0.2 0.8 0" name="stuff" value="Click me" type="raised"></a-button>
-					<a-button position="0.2 0.35 0" width="3" name="stuff" value="You cannot click me" disabled="true"></a-button>
 				</a-form>
 			</a-rounded>
-			<!-- END FORM -->
 
-			<!-- BEGIN TOAST -->
+			<!--Toast pop-up -->
 			<a-toast message="This is a toast" action="Got it"></a-toast>
-			<!-- END TOAST -->
-
-			<!-- BEGIN ENVIRONEMENT -->
-			<a-gradient-sky material="shader: gradient; topColor: 255 0 0; bottomColor: 0 121 255;"></a-gradient-sky>
-			<!-- END ENVIRONEMENT -->
 		</a-scene>
 
 	<script type="text/javascript">
 		let button = document.querySelector('a-button');
 		let toast = document.querySelector('a-toast');
+		let input_box = document.querySelector('a-input');
+		
+		// Show toast pop-up when button is clicked, and close when the toast is clicked
 		toast.addEventListener('actionclick', ()=>{
 		toast.hide();
 		})
 		button.addEventListener('click', ()=> {
 		toast.show();
-	})
+		})
+		
+		// Track keyboard input
+		let keyboard = document.querySelector("a-keyboard");
+		keyboard.open();
+		keyboard.addEventListener('input', (e)=>{
+			search_query += e.detail;
+			console.log(search_query);
+		});
+		
+		// Listen for keyboard close
+		keyboard.addEventListener('dismiss', (e)=>{
+			console.log("Dismiss: ", e);
+			keyboard.dismiss();
+			input_box.value = '' // Clear the input box value
+			/*Make the Youtube query here*/
+			/*Call function to play video*/
+			search_query = '' // Reset query for the next search
+		});
 	</script>
-	
+
 	</body>
 </html>
