@@ -57,14 +57,21 @@
 		toast.show();
 		})
 		
-		// Track keyboard input
+
 		let keyboard = document.querySelector("a-keyboard");
-		keyboard.open();
+		// show the keyboard after clicking the input
+		
+        button.addEventListener('click', ()=> {
+            keyboard.open();
+        })
+
+        // Track keyboard input
 		keyboard.addEventListener('input', (e)=>{
 			search_query += e.detail;
 			console.log(search_query);
 		});
-		
+
+
 		// Listen for keyboard close
 		keyboard.addEventListener('dismiss', (e)=>{
 			console.log("Dismiss: ", e);
