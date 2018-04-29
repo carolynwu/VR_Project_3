@@ -1,13 +1,13 @@
 // Your use of the YouTube API must comply with the Terms of Service:
 // https://developers.google.com/youtube/terms
 
-var search_query = 'aimer';
+var search_query = 'pizza';
 var responseJSON = '';
 
 // Get API key from config.js
 var fc = new FrameConfig();
 var API_KEY = fc.key;
-var video_base = "https://www.youtube.com/watch?v=zSOJk7ggJts";
+var video_base = "https://www.youtube.com/watch?v=";
 
 var REQUEST_LIMIT = 10; // Only return 10 videos
 
@@ -18,6 +18,9 @@ var video_id = [];
 var video_description = [];
 
 var DEBUG = true;
+var TEST_TABS = false;
+var VIDEO_DOMS = ["video1", "video2", "video3", "video4", "video5"];
+
 // Helper function to display JavaScript value on HTML page.
 // This function will be repurposed to return only desired parts of the response
 function showResponse(response) {
@@ -28,8 +31,8 @@ function showResponse(response) {
 	responseJSON = JSON.parse(responseString);
 	responseJSON = responseJSON.result.items;
 	
-	// Parse Videos to display concent for the front-end
-	for(var x = 0; x < REQUEST_LIMIT; x++){
+	// Parse Videos to display content for the front-end - Only parse 5 videos
+	for(var x = 0; x < REQUEST_LIMIT/2; x++){
 		video_thumb.push(responseJSON[x].snippet.thumbnails.medium.url);
 		video_title.push(responseJSON[x].snippet.title);
 		video_id.push(responseJSON[x].id.videoId);
@@ -42,12 +45,29 @@ function showResponse(response) {
 		console.log(video_id);
 		console.log(video_description);
 		
-		for(var x = 0; x < REQUEST_LIMIT; x++){
-			window.open(video_thumb[x]); // This opens 10 new tabs, be weary
+		if(TEST_TABS){
+			for(var x = 0; x < REQUEST_LIMIT; x++){
+				window.open(video_thumb[x]); // This opens 10 new tabs, be weary
+			}
 		}
 	}
 
-    document.getElementById('response').innerHTML += JSON.stringify(responseJSON, '', 2); // Append to DOM el
+    //document.getElementById('response').innerHTML += JSON.stringify(responseJSON, '', 2); // Append to DOM el
+	
+	formatVideoInformation(); // Call function to parse the data from 5 videos
+}
+
+// Called in showResponse() when all of the data needed to show the front-end 
+// has been collected and stored in arrays
+function formatVideoInformation(){
+	for(var x = 0; x < REQUEST_LIMIT/2; x++){
+		let video_url = video_base + video_id[x];
+		console.log(video_url);
+		document.getElementById(VIDEO_DOMS[x]).innerHTML += "<p>" + video_title[x] +"</p> <br>";
+		document.getElementById(VIDEO_DOMS[x]).innerHTML += "<p>" + video_description[x] +"</p> <br>";
+		document.getElementById(VIDEO_DOMS[x]).innerHTML += "<a href=" + video_base + video_id[x] + ">" + "URL: " + video_base + video_id[x] + "</a> <br>";
+		document.getElementById(VIDEO_DOMS[x]).innerHTML += "<img href=" + video_url + " src=" + video_thumb[x] + "> <br>";
+	}	
 }
 
 // Called automatically when JavaScript client library is loaded.
@@ -67,7 +87,7 @@ function search() {
     var request = gapi.client.youtube.search.list({
         part: 'snippet',
         q: search_query,
-		maxResults: REQUEST_LIMIT,
+		maxResults: REQUEST_LIMIT, // return 10 videos
 		type: "video" // Only show videos
     });
     
