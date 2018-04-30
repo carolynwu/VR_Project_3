@@ -2,7 +2,342 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76d8b684-f6c5-4ef2-955f-bb3068ca0745" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/models/popcorn_box/scene.bin" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/models/popcorn_box/scene.gltf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/models/popcorn_box/textures/Popcorn_baseColor.jpeg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/models/popcorn_box/textures/Popcorn_metallicRoughness.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/models/popcorn_box/textures/Popcorn_normal.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/.bowerrc" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/.csslintrc" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/.htmlhintrc" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/.jshintrc" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/.npmignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/LICENSE" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/buildEnglishVersions.bat" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/buildEnglishVersions.sh" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/easyrtc.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/easyrtc.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/easyrtc_app.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/easyrtc_ft.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/easyrtc_int.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/easyrtc_lang.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/img/LICENSE" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/img/easyrtc.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/img/powered_by_easyrtc.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/img/priologic_logo_white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/img/x.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/labs/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/labs/desktopCapture.zip" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/labs/desktop_capture_iframe_version.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/labs/desktop_capture_no_iframe_version.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/labs/easyrtc_recorder.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/labs/easyrtc_sc.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/labs/easyrtc_sc_extension/Icon-16.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/labs/easyrtc_sc_extension/Icon-64.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/labs/easyrtc_sc_extension/background-script.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/labs/easyrtc_sc_extension/content-script.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/labs/easyrtc_sc_extension/manifest.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/api/labs/inline-installcode.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/bower.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/css/demo4.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/css/demo_audio_video_simple.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/css/demo_audio_video_simple_hd.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/css/demo_lowbandwidth.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/css/demo_recording.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/css/demo_room.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/css/landing.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo4.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_audio_only.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_audio_video.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_audio_video_simple.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_audio_video_simple_hd.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_connector.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_data_channel_filesharing.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_data_channel_messaging.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_ice_filter.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_instant_messaging.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_instant_messaging_rooms.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_instant_messaging_selfconnect.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_lowbandwidth.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_multiparty.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_multistream.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_multistream_iframe.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_multistream_no_iframe.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_reconnect.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_recording.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_screen_receive.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_screen_send.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/demo_video_only.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/LICENSE" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/bg_dark.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/bg_light.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/blank.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/br_chrome.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/br_chrome_canary.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/br_ff.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/br_ff_aurora.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/br_ff_nightly.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/br_ie.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/br_opera.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/br_safari.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/br_status_fail.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/br_status_pass.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/br_status_warn.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/button_close.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/button_mute.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/button_refresh.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/button_unmute.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/by_priologic_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/cloud.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/easyrtc_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/irongrip.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/powered_by_easyrtc.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/skedans_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/images/textEntry.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo4.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_audio_only.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_audio_video.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_audio_video_simple.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_audio_video_simple_hd.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_connector.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_data_channel_filesharing.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_data_channel_messaging.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_ice_filter.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_instant_messaging.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_instant_messaging_rooms.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_instant_messaging_selfconnect.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_lowbandwidth.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_multiparty.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_multistream.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_multistream_iframe.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_multistream_no_iframe.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_reconnect.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_recording.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_screen_receive.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_screen_send.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/demo_video_only.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/prettify/README" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/prettify/jquery.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/prettify/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/prettify/lang-css.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/prettify/lang-sql.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/prettify/lang-vhdl.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/prettify/lang-yaml.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/prettify/loadAndFilter.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/prettify/prettify.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/demos/js/prettify/prettify.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/dictionary/project.dic" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/readme.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/publish.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/static/scripts/prettify/Apache-License-2.0.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/static/scripts/prettify/lang-css.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/static/scripts/prettify/prettify.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/static/styles/jsdoc-default.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/static/styles/prettify-jsdoc.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/static/styles/prettify-tomorrow.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/container.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/details.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/example.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/examples.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/exceptions.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/fires.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/layout.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/mainpage.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/members.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/method.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/params.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/properties.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/returns.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/source.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/tutorial.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates/tmpl/type.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/publish.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/static/scripts/prettify/Apache-License-2.0.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/static/scripts/prettify/lang-css.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/static/scripts/prettify/prettify.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/static/styles/jsdoc-default.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/static/styles/prettify-jsdoc.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/static/styles/prettify-tomorrow.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/container.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/details.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/example.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/examples.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/exceptions.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/fires.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/layout.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/mainpage.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/members.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/method.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/params.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/properties.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/returns.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/source.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/tutorial.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/client_jsdoc_templates2/tmpl/type.tmpl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/readme.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/update_client_easyrtc_docs.bat" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/update_client_easyrtc_docs.sh" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/update_client_easyrtc_ft_docs.bat" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/update_client_easyrtc_ft_docs.sh" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/update_server_docs.bat" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/dev/scripts/update_server_docs.sh" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/Easyrtc.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/Easyrtc_App.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/Easyrtc_IframeCapture.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/Easyrtc_No_IframeCapture.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/Easyrtc_Rates.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/Easyrtc_Recorder.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/easyrtc_app.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/easyrtc_int.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/easyrtc_rates.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/easyrtc_recorder.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/easyrtc_sc.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-Bold-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-Bold-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-Bold-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-BoldItalic-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-BoldItalic-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-BoldItalic-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-Italic-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-Italic-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-Italic-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-Light-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-Light-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-Light-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-LightItalic-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-LightItalic-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-LightItalic-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-Regular-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-Regular-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/fonts/OpenSans-Regular-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/global.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/jsdoc/styles/jsdoc-client.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/labs_desktop_capture_iframe_version.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/labs_desktop_capture_no_iframe_version.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/labs_easyrtc_rates.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/labs_easyrtc_recorder.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/labs_easyrtc_sc.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/scripts/linenumber.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/scripts/prettify/Apache-License-2.0.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/scripts/prettify/lang-css.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/scripts/prettify/prettify.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/styles/jsdoc-default.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/styles/prettify-jsdoc.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs/styles/prettify-tomorrow.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs_lite/Easyrtc.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs_lite/Easyrtc_App.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs_lite/Easyrtc_ft.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs_lite/scripts/prettify/Apache-License-2.0.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs_lite/scripts/prettify/lang-css.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs_lite/scripts/prettify/prettify.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs_lite/styles/jsdoc-default.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs_lite/styles/prettify-jsdoc.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/client_html_docs_lite/styles/prettify-tomorrow.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/conf.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_authentication.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_changelog.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_client_tutorial.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_debugging.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_faq.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_rooms.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_server_configuration.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_server_events.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_server_ice.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_server_install.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_server_msgtypes.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_server_ssl.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_upcoming_features.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_webrtc_problems.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/easyrtc_with_other_servers.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/easyrtc_default_event_listeners.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/easyrtc_default_options.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/easyrtc_private_obj.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/easyrtc_public_obj.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/easyrtc_server.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/easyrtc_util.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-Bold-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-Bold-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-Bold-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-BoldItalic-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-BoldItalic-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-BoldItalic-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-Italic-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-Italic-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-Italic-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-Light-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-Light-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-Light-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-LightItalic-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-LightItalic-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-LightItalic-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-Regular-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-Regular-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/fonts/OpenSans-Regular-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/general_util.js.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/global.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/module-easyrtc_default_event_listeners-eventListener.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/module-easyrtc_default_event_listeners.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/module-easyrtc_default_options.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/module-easyrtc_private_obj.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/module-easyrtc_public_obj-pub.events.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/module-easyrtc_public_obj-pub.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/module-easyrtc_public_obj-pub.util.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/module-easyrtc_public_obj.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/module-easyrtc_util-eu.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/module-easyrtc_util.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/module-general_util-g.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/module-general_util.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/pub.appObj.connectionObj.connectionRoomObj.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/pub.appObj.connectionObj.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/pub.appObj.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/pub.appObj.roomObj.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/pub.appObj.sessionObj.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/scripts/linenumber.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/scripts/prettify/Apache-License-2.0.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/scripts/prettify/lang-css.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/scripts/prettify/prettify.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/styles/jsdoc-default.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/styles/prettify-jsdoc.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/docs/server_html_docs/styles/prettify-tomorrow.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/gruntfile.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/lib/easyrtc_default_event_listeners.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/lib/easyrtc_default_options.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/lib/easyrtc_private_obj.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/lib/easyrtc_public_obj.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/lib/easyrtc_server.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/lib/easyrtc_util.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/lib/general_util.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/package.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/server_example/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/server_example/package.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/server_example/server.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/server_example/static/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/test/api/.bowerrc" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/test/api/README" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/test/api/bootstrap/jasmine.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/test/api/bootstrap/karma.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/test/api/bower.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/test/api/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/test/api/karma.conf.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/test/api/spec/api/adapter.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/test/api/spec/api/easyrtc_int.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/node_modules/easyrtc/test/api/spec/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/server/easyrtc-server.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/test.html" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/api/youtube.html" afterPath="$PROJECT_DIR$/api/youtube.html" />
+      <change beforePath="$PROJECT_DIR$/api/youtube.js" afterPath="$PROJECT_DIR$/api/youtube.js" />
+      <change beforePath="$PROJECT_DIR$/index.html" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,12 +347,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+            <state relative-caret-position="168">
+              <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="easyrtc-server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/easyrtc-server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1275">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -32,6 +377,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/test.html" />
       </list>
     </option>
   </component>
@@ -41,9 +387,12 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="258" />
+    <option name="y" value="69" />
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
@@ -62,7 +411,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -73,24 +421,52 @@
             <path>
               <item name="VR_Project_3" type="b2602c69:ProjectViewProjectNode" />
               <item name="VR_Project_3" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="VR_Project_3" type="b2602c69:ProjectViewProjectNode" />
               <item name="VR_Project_3" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="networked-aframe.js" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="VR_Project_3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VR_Project_3" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VR_Project_3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VR_Project_3" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="popcorn_box" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VR_Project_3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VR_Project_3" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VR_Project_3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VR_Project_3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Carolyn\Documents\GitHub\VR_Project_3\models" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -119,24 +495,35 @@
       <updated>1524961869752</updated>
       <workItem from="1524961870873" duration="51000" />
       <workItem from="1524961952766" duration="126000" />
+      <workItem from="1525123744487" duration="3594000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177000" />
+    <option name="totallyTimeSpent" value="3771000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="1" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960339" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -144,7 +531,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -159,10 +545,80 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/assets/images/ButtonShadow.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/CheckmarkIcon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/ShiftActiveIcon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ChildEntityCache.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Compressor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/EnterIcon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ComponentHelper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-504">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/BackspaceIcon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/easyrtc-server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1275">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
           <folding />
         </state>
       </provider>
