@@ -25,8 +25,8 @@
 		AFRAME.ASSETS_PATH = "./assets";
 		var search_query = '';
 	</script>
-	
 </head>
+
 	<body>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
 		<script src="/easyrtc/easyrtc.js"></script>
@@ -37,24 +37,25 @@
 			<a-assets>
 				<img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
 				<img id="sky" src="http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
-
+				<!--<a-asset-item id="popcorn" src="assets/models/popcorn/model.obj"></a-asset-item>
+				<a-asset-item id="popcorn-mat" src="assets/models/popcorn/materials.mtl"></a-asset-item>-->
 				<!-- Templates -->
 				<!-- Avatar. Must be HTML <template> tagged-->
 				<template id="avatar-template">
 					<a-entity class="avatar">
-						<a-sphere class="head" color="#ffffff" scale="0.45 0.5 0.4"></a-sphere>
+						<a-torus class="head" color="#ffffff" scale="0.45 0.5 0.4"></a-torus>
 						<a-entity class="face" position="0 0.05 0">
 							<a-sphere class="eye" color="#efefef" position="0.16 0.1 -0.35" scale="0.12 0.12 0.12">
-								<a-sphere class="pupil" color="#000" position="0 0 -1" scale="0.2 0.2 0.2"></a-sphere>
+								<a-cone class="pupil" color="#000" position="0 0 -1" scale="0.2 0.2 0.2"></a-cone>
 							</a-sphere>
 							<a-sphere class="eye" color="#efefef" position="-0.16 0.1 -0.35" scale="0.12 0.12 0.12">
-								<a-sphere class="pupil" color="#000" position="0 0 -1" scale="0.2 0.2 0.2"></a-sphere>
+								<a-cone class="pupil" color="#000" position="0 0 -1" scale="0.2 0.2 0.2"></a-cone>
 							</a-sphere>
 						</a-entity>
 					</a-entity>
 				</template>
 			</a-assets>
-			
+
 			<!--Laser controls entity for WebVR compatible headsets?-->
 			<a-entity laser-controls="hand: right"></a-entity>
 			
@@ -80,7 +81,8 @@
 			
 			<!--Begin networking setup for RTC-->
 			<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls>
-				<a-sphere class="head" visible="false" random-color></a-sphere>
+				<a-torus class="head" visible="false" random-color></a-torus>
+				<!--a-obj-model position="0 0 0" scale="1 1 1" material="#popcorn-mat" obj-model="#popcorn"></a-obj-model>-->
 			</a-entity>
 			
 			<!--This is commented it out because we're using a gradient "sky" and ground plane-->
