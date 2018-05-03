@@ -20,12 +20,21 @@
 	<script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
 	<script src="https://cdn.rawgit.com/etiennepinchon/aframe-material/master/dist/aframe-material.min.js"></script>
 	
+	<!-- Helper script to ensure that all new players that join the scene are spawned within the same place -->
 	<script src="/js/spawn-in-circle.component.js"></script>
+
+	<!-- Depenendices for YouTube -->
+	<script src="api/config.js"></script>
+	<script src="api/youtube.js"></script>
+	<script src="https://apis.google.com/js/client.js"></script>
+
+	<!-- Globals for simplicity -->
 	<script type="text/javascript">
 		AFRAME.ASSETS_PATH = "./assets";
 		var search_query = '';
+		var make_youtube_query = false;
 	</script>
-	
+
 </head>
 	<body>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
@@ -71,7 +80,12 @@
 			<!-- Help display form-->
 			<a-rounded position="0.5 0.5 -2.5" width="4" height="3.1" radius="0.05" rotation="0 -20 0" scale="0.3 0.3 0.3">
 			<a-form>
-				<a-button position="0.2 0.8 0" name="stuff" value="Click me" type="raised"></a-button>
+				<!--<a-image position="0.2 0.8 0" name="stuff" value="" type="raised"></a-button>-->
+				<a-image id="image1"></a-image>
+				<a-image id="image2"></a-image>
+				<a-image id="image3"></a-image>
+				<a-image id="image4"></a-image>
+				<a-image id="image5"></a-image>
 			</a-form>
 			</a-rounded>
 
@@ -86,14 +100,13 @@
 			<!--This is commented it out because we're using a gradient "sky" and ground plane-->
 			<!--<a-entity position="0 0 0" geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>-->
 			<!--a-sky src="#sky" rotation="0 -90 0"></a-sky>-->
-			<!--<a-entity id="particles" particle-system="preset: snow"></a-entity>-->
 
 			<!--Lighting-->
 			<a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
 			<a-entity light="color: #ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
 		</a-scene>
 
-		<!-- This script and all other utilities should be moved--->
+		<!-- This script and all other utilities should be moved -->
 		<script>
 		// Define custom schema for syncing avatar color, set by random-color
 		NAF.schemas.add({
@@ -113,54 +126,53 @@
 		function onConnect () {
 			console.log("onConnect", new Date());
 		}
-
-		// On mobile remove elements that are resource heavy
-		var isMobile = AFRAME.utils.device.isMobile();
-
-		if (isMobile) {
-			var particles = document.getElementById('particles');
-			particles.parentNode.removeChild(particles);
-		}
 		</script>
 		
-		<!-- This script and all other utilities should be moved--->
+		<!-- This script and all other utilities should be moved -->
 		<script type="text/javascript">
-		let button = document.querySelector('a-button');
 		let toast = document.querySelector('a-toast');
 		let input_box = document.querySelector('a-input');
-		
+		let keyboard = document.querySelector("a-keyboard");
+
 		// Show toast pop-up when button is clicked, and close when the toast is clicked
 		toast.addEventListener('actionclick', ()=>{
-		toast.hide();
-		})
-		button.addEventListener('click', ()=> {
-		toast.show();
+			toast.hide();
 		})
 		
 
-		let keyboard = document.querySelector("a-keyboard");
-		// show the keyboard after clicking the input
-		
+		/*/ show the keyboard after clicking the button
         button.addEventListener('click', ()=> {
             keyboard.open();
-        })
+        })*/
 
         // Track keyboard input
 		keyboard.addEventListener('input', (e)=>{
 			search_query += e.detail;
-			console.log(search_query);
+			//console.log(search_query);
 		});
 
+		// When the user presses the enter key
+		keyboard.addEventListener('enter', (e)=>{
+			console.log("Enter key pressed!")
+		});
+		
+		// When the user presses backspace
+		keyboard.addEventListener('backspace', (e)=>{
+			input_box.value = input_box.value.substring(0, input_box.value.length - 1);
+			search_query = search_query.substring(0, search_query.length - 1);
+			console.log(input_box.value);
+			console.log(search_query);
+		});
 
 		// Listen for keyboard close
 		keyboard.addEventListener('dismiss', (e)=>{
 			console.log("Dismiss: ", e);
 			keyboard.dismiss();
-			input_box.value = '' // Clear the input box value
-			/*Make the Youtube query here*/
-			/*Call function to play video*/
+			make_youtube_query = true;
+			call_youtube_api(make_youtube_query);
 			search_query = '' // Reset query for the next search
 		});
 		</script>
+	
 	</body>
 </html>
