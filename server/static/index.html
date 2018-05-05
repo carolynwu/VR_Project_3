@@ -7,13 +7,13 @@
 	<meta name="keywords" content="Virtual,Reality,Project">
 	<meta name="author" content="Xujia Wu and Simon Woldemichael">
 	
-	<!--script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script-->
-	<!--a-frame-materials keyboard has only been tested with A-Frame v0.6.1-->
+	<!-- script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script -->
+	<!-- a-frame-materials keyboard has only been tested with A-Frame v0.6.1 -->
 	<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
 	<script src="/build.js"></script>
 	<script>window.NAF || document.write('<script src="https://unpkg.com/networked-aframe/dist/networked-aframe.min.js">\x3C/script>')</script>
 	<script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
-	<!--script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>-->
+	<!--script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script> -->
 	
 
 	<script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
@@ -23,8 +23,10 @@
 	<!-- Helper script to ensure that all new players that join the scene are spawned within the same place -->
 	<script src="/js/spawn-in-circle.component.js"></script>
 
-	<!-- Depenendices for YouTube -->
+	<!-- Config -->
 	<script src="api/config.js"></script>
+	
+	<!-- Depenendices for YouTube -->
 	<script src="api/youtube.js"></script>
 	<script src="https://apis.google.com/js/client.js"></script>
 
@@ -40,15 +42,15 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
 		<script src="/easyrtc/easyrtc.js"></script>
 		
-		<!--Begin A-Scene-->
+		<!-- Begin A-Scene -->
 		<a-scene networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
-			<!--Define assets-->
+			<!-- Define assets -->
 			<a-assets>
 				<img id="grid" src="https://i.imgur.com/25P1geh.png" crossorigin="anonymous" />
 				<img id="sky" src="http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
 
 				<!-- Templates -->
-				<!-- Avatar. Must be HTML <template> tagged-->
+				<!-- Avatar. Must be HTML <template> tagged -->
 				<template id="avatar-template">
 					<a-entity class="avatar">
 						<a-sphere class="head" color="#ffffff" scale="0.45 0.5 0.4"></a-sphere>
@@ -64,10 +66,10 @@
 				</template>
 			</a-assets>
 			
-			<!--Laser controls entity for WebVR compatible headsets?-->
+			<!-- Laser controls entity for WebVR compatible headsets? -->
 			<a-entity laser-controls="hand: right"></a-entity>
 			
-			<!-- Setup skybox gradient-->
+			<!-- Setup skybox gradient -->
 			<a-gradient-sky material="shader: gradient; topColor: 0 0 204; bottomColor: 0 153 255;"></a-gradient-sky>
 
 			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking)-->
@@ -80,7 +82,7 @@
 			function styleKeyboard(){
 				// Update the keyboard's settings since it allow outline changes
 				var key_styler = document.querySelector("a-keyboard");
-				key_styler.setAttribute('position', {x: -2.13, y: -.30, z: -2.55});
+				key_styler.setAttribute('position', {x: -2.15, y: 0.015, z: -2.00});
 				key_styler.setAttribute('scale', {x: 3.519, y: 3.519, z: 3.519});
 			}
 			</script>
@@ -88,31 +90,33 @@
 			<a-input onClick="styleKeyboard()" position="-.65 1.069 -3.35" rotation="-21.4 0 0" placeholder="Input video search query" color="black" width="1" scale="2.163 2.163 2.163"></a-input>
 			
 			
-			<!-- Help display form-->
-			<a-rounded position="-1.18 1.222 -3.44" width="4" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" color="#757575">
+			<!-- Help display form -->
+			<a-rounded position="-1.18 1.222 -3.44" width="4" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
 			<a-form>
-				<!--<a-image position="0.2 0.8 0" name="stuff" value="" type="raised"></a-button>-->
-				<a-image color="#757575" id="image1" position=".559 2.573 .010"></a-image>
-				<a-image color="#757575" id="image2" position=".552 1.546 .008"></a-image>
-				<a-image color="#757575" id="image3" position=".548 .535 .006"></a-image>
-				<a-image color="#757575" id="image4" position="" visible="false"></a-image>
-				<a-image color="#757575" id="image5" position="" visible="false"></a-image>
+				<a-button position=-1.56 -0.32 2.469" rotation="0 45 0" name="help" value="Need Help?" color="#FF0000"></a-button>
+				<a-image id="image1" position=".559 2.573 .010" material="shader: standard"></a-image>
+				<a-image id="image2" position=".552 1.546 .008" material="shader: standard"></a-image>
+				<a-image id="image3" position=".548 .535 .006" material="shader: standard"></a-image>
+				<a-image id="image4" position="" visible="false" material="shader: standard"></a-image>
+				<a-image id="image5" position="" visible="false" material="shader: standard"></a-image>
 			</a-form>
 			</a-rounded>
 
-			<!--Toast pop-up -->
+			<!-- Toast pop-up -->
 			<a-toast message="This is a toast" action="Got it"></a-toast>
 			
-			<!--Begin networking setup for RTC-->
+			<!-- Ground plane -->
+			<a-entity position="0 0 0" geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6;"></a-entity>
+			
+			<!-- Begin networking setup for RTC -->
 			<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls>
 				<a-sphere class="head" visible="false" random-color></a-sphere>
 			</a-entity>
 			
-			<!--This is commented it out because we're using a gradient "sky" and ground plane-->
-			<!--<a-entity position="0 0 0" geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>-->
-			<!--a-sky src="#sky" rotation="0 -90 0"></a-sky>-->
-
-			<!--Lighting-->
+			<!-- This is commented it out because we're using a gradient "sky" and ground plane -->
+			<!-- a-sky src="#sky" rotation="0 -90 0"></a-sky>-->
+ 
+			<!-- Lighting -->
 			<a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
 			<a-entity light="color: #ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
 		</a-scene>
