@@ -81,7 +81,7 @@
 
 			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking)-->
 			<a-camera raycaster="far: 150; objects: .intersectable" look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera>
-
+			
 			<!-- Make keyboard and display an input box for search query -->
 			<a-keyboard></a-keyboard>
 			
@@ -89,6 +89,7 @@
 			<a-input onClick="styleKeyboard()" position="-.65 1.235 -3.35" rotation="-21.4 0 0" placeholder="Input video search query" color="black" width="1" scale="2.163 2.163 2.163"></a-input>
 			
 			<!-- Video selection interface -->
+			<a-entity id="interface-title-1" text="value:YouTube Video Search; color:#E52D27; shader: msdf; font:mozillavr;" scale="15 15 15" position="4.571 5.134 -3.42"></a-entity>
 			<!-- Note: Since only three videos are being shown, the last two of every attribute have visible="false" -->
 			<a-rounded position="-1.18 1.567 -3.44" width="4" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
 			<a-form>
