@@ -19,6 +19,8 @@ var DEBUG = true;
 var TEST_TABS = false;
 var VIDEO_DOMS = ["video1", "video2", "video3", "video4", "video5"];
 var IMAGE_CONTAINERS = ["image1", "image2", "image3", "image4", "image5"];
+var TITLE_CONTAINERS = ["title1", "title2", "title3", "title4", "title5"];
+var DESCRIPTION_CONTAINERS = ["description1", "description2", "description3", "description4", "description5"];
 
 function call_youtube_api(make_query){
 	// Called in showResponse() when all of the data needed to show the front-end 
@@ -35,6 +37,8 @@ function call_youtube_api(make_query){
 			
 			//document.getElementById(IMAGE_CONTAINERS[x]).src = video_thumb[x];
 			document.querySelector('#'+IMAGE_CONTAINERS[x]).setAttribute('src', video_thumb[x]);
+			document.querySelector('#'+TITLE_CONTAINERS[x]).setAttribute('value', video_title[x]);
+			document.querySelector('#'+DESCRIPTION_CONTAINERS[x]).setAttribute('value', video_description[x]);
 		}	
 	}
 
@@ -107,7 +111,7 @@ function call_youtube_api(make_query){
 	}
 	
 	if(make_query){
-		var search_query = document.querySelector('a-input').value; // Select this from the aframe-materials textbox
+		var search_query = document.getElementById('youtube-input').value; // Select this from the aframe-materials textbox
 		console.log("FUNCTION: call_youtube_api | " + search_query);
 		// Begin function calls
 		gapi.client.load('youtube', 'v3', onYouTubeApiLoad);

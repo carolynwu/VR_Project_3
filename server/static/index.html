@@ -33,7 +33,7 @@
 	<!-- Globals for simplicity -->
 	<script type="text/javascript">
 		AFRAME.ASSETS_PATH = "./assets";
-		var search_query = '';
+		var youtube_search_query = '';
 		var make_youtube_query = false;
 	</script>
 	
@@ -78,22 +78,27 @@
 			
 			<!-- Setup skybox gradient -->
 			<a-gradient-sky material="shader: gradient; topColor: 0 0 204; bottomColor: 0 153 255;"></a-gradient-sky>
-
+			
+			<!-- Ground plane -->
+			<a-entity position="0 0 0" geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6;"></a-entity>
+			
 			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking)-->
 			<a-camera raycaster="far: 150; objects: .intersectable" look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera>
 			
-			<!-- Make keyboard and display an input box for search query -->
-			<a-keyboard></a-keyboard>
+			<!-- BEGIN YOUTUBE SECTION -->
+			<!-- Make keyboard and display an input box for youtube search query -->
+			<a-keyboard id="youtube-keyboard" ></a-keyboard>
 			
 			<!-- When the user clicks the input box, the keyboard will be scaled and repositioned. Unable to do this with attribute tags for some reason -->
-			<a-input onClick="styleKeyboard()" position="-.65 1.235 -3.35" rotation="-21.4 0 0" placeholder="Input video search query" color="black" width="1" scale="2.163 2.163 2.163"></a-input>
+			<a-input id="youtube-input" onClick="styleKeyboard()" position="-.65 1.235 -3.35" rotation="-21.4 0 0" placeholder="Input video search query" color="black" width="1" scale="2.163 2.163 2.163"></a-input>
 			
 			<!-- Video selection interface -->
 			<a-entity id="interface-title-1" text="value:YouTube Video Search; color:#E52D27; shader: msdf; font:mozillavr;" scale="15 15 15" position="4.571 5.134 -3.42"></a-entity>
+			
 			<!-- Note: Since only three videos are being shown, the last two of every attribute have visible="false" -->
-			<a-rounded position="-1.18 1.567 -3.44" width="4" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
+			<a-rounded id="youtube-interface" position="-1.18 1.567 -3.44" width="4" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
 			<a-form>
-				<a-button position=-1.56 -0.32 2.469" rotation="0 45 0" name="help" value="Need Help?" color="#FFFFFF"></a-button>
+				<a-button id="youtube-help-button" position=-1.56 -0.32 2.469" rotation="0 45 0" name="help" value="Need Help?" color="#FFFFFF"></a-button>
 				
 				<!-- Video Thumbnails -->
 				<a-image id="image1" position=".559 2.573 .010" material="shader: standard"></a-image>
@@ -119,10 +124,9 @@
 			</a-rounded>
 
 			<!-- Toast pop-up -->
-			<a-toast duration="100000" autoshow="false" font="kelsonsans" message="Click the search box!" action="Got it"></a-toast>
+			<a-toast id="youtube-toast" duration="100000" autoshow="false" font="kelsonsans" message="Click the search box!" action="Got it"></a-toast>
+			<!-- END YOUTUBE SECTION -->
 			
-			<!-- Ground plane -->
-			<a-entity position="0 0 0" geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6;"></a-entity>
 			
 			<!-- Begin networking setup for RTC -->
 			<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls>
@@ -156,51 +160,53 @@
 		
 		<!-- This script and all other utilities should be moved -->
 		<script type="text/javascript">
-		let toast = document.querySelector('a-toast');
-		let input_box = document.querySelector('a-input');
-		let keyboard = document.querySelector('a-keyboard');
-		let help_button = document.querySelector('a-button');
+		let youtube_toast = document.getElementById('youtube-toast');
+		let youtube_input_box = document.getElementById('youtube-input');
+		let youtube_keyboard = document.getElementById('youtube-keyboard');
+		let youtube_help_button = document.getElementById('youtube-help-button');
 		
+		/* BEGIN YOUTUBE UI/UX EVENT LISENTERS */
 		// Show toast pop-up when button is clicked, and close when the toast is clicked
-		toast.addEventListener('actionclick', ()=>{
-			toast.hide();
+		youtube_toast.addEventListener('actionclick', ()=>{
+			youtube_toast.hide();
 		})
 		
 
 		// Show a help message after clicking the button
-        help_button.addEventListener('click', ()=> {
-			toast.setAttribute('scale', {x:1.5, y:1.5, z:1.5});
-			toast.setAttribute('position', {x:-1.49, y:.368, z:-1.6}); 
-			toast.show();
+        youtube_help_button.addEventListener('click', ()=> {
+			youtube_toast.setAttribute('scale', {x:1.5, y:1.5, z:1.5});
+			youtube_toast.setAttribute('position', {x:-1.49, y:.368, z:-1.6}); 
+			youtube_toast.show();
         })
 		
 		// Track keyboard input
-		keyboard.addEventListener('input', (e)=>{
-			search_query += e.detail;
-			//console.log(search_query);
+		youtube_keyboard.addEventListener('input', (e)=>{
+			youtube_search_query += e.detail;
+			//console.log(youtube_search_query);
 		});
 
 		// When the user presses the enter key
-		keyboard.addEventListener('enter', (e)=>{
+		youtube_keyboard.addEventListener('enter', (e)=>{
 			console.log("Enter key pressed!")
 		});
 		
 		// When the user presses backspace
-		keyboard.addEventListener('backspace', (e)=>{
-			input_box.value = input_box.value.substring(0, input_box.value.length - 1);
-			search_query = search_query.substring(0, search_query.length - 1);
-			console.log(input_box.value);
-			console.log(search_query);
+		youtube_keyboard.addEventListener('backspace', (e)=>{
+			youtube_input_box.value = youtube_input_box.value.substring(0, youtube_input_box.value.length - 1);
+			youtube_search_query = youtube_search_query.substring(0, youtube_search_query.length - 1);
+			console.log(youtube_input_box.value);
+			console.log(youtube_search_query);
 		});
 
 		// Listen for keyboard close
-		keyboard.addEventListener('dismiss', (e)=>{
+		youtube_keyboard.addEventListener('dismiss', (e)=>{
 			console.log("Dismiss: ", e);
-			keyboard.dismiss();
+			youtube_keyboard.dismiss();
 			make_youtube_query = true;
 			call_youtube_api(make_youtube_query); // Query YouTube's API
-			search_query = '' // Reset query for the next search
+			youtube_search_query = '' // Reset query for the next search
 		});
+		/* END YOUTUBE UI/UX EVENT LISENTERS */
 		</script>
 	
 	</body>
