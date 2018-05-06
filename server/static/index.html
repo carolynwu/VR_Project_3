@@ -40,8 +40,7 @@
 				
 	<script type="text/javascript">
 	function styleKeyboard(){
-		console.log("what the fuck");
-		// Update the keyboard's settings since it allow outline changes
+		// Update the keyboard's settings since it allows outline changes
 		var key_styler = document.querySelector("a-keyboard");
 		key_styler.setAttribute('position', {x: -2.15, y: 0.015, z: -2.00});
 		key_styler.setAttribute('scale', {x: 3.519, y: 3.519, z: 3.519});
@@ -55,7 +54,6 @@
 			<!-- Define assets -->
 			<a-assets>
 				<img id="grid" src="https://i.imgur.com/25P1geh.png" crossorigin="anonymous" />
-				<img id="sky" src="http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
 
 				<!-- Templates -->
 				<!-- Avatar. Must be HTML <template> tagged -->
@@ -104,17 +102,23 @@
 				<a-image id="image5" position="" visible="false" material="shader: standard"></a-image>
 				
 				<!-- Video Titles -->
-				<a-text id="title1" color="black" wrapCount="30" position="1.170 2.940 0"></a-text>
-				<a-text id="title2" color="black" wrapCount="30" position="1.159 1.915 0"></a-text>
-				<a-text id="title3" color="black" wrapCount="30" position="1.242 .830 0"></a-text>
+				<a-text id="title1" color="black" font="kelsonsans" wrap-count="30" position="1.170 2.9 0" width="2"></a-text>
+				<a-text id="title2" color="black" font="kelsonsans" wrap-count="30" position="1.159 1.915 0" width="2"></a-text>
+				<a-text id="title3" color="black" font="kelsonsans" wrap-count="30" position="1.161 .830 0" width="2"></a-text>
 				<a-text id="title4" visible="false"></a-text>
 				<a-text id="title5" visible="false"></a-text>
 				
+				<!-- Video Descriptions -->
+				<a-text id="description1" color="black" font="kelsonsans" wrap-count="40" position="1.170 2.502 0" width="2"></a-text>
+				<a-text id="description2" color="black" font="kelsonsans" wrap-count="40" position="1.159 1.441 0" width="2"></a-text>
+				<a-text id="description3" color="black" font="kelsonsans" wrap-count="40" position="1.161 .384 0" width="2"></a-text>
+				<a-text id="description4" visible="false"></a-text>
+				<a-text id="description5" visible="false"></a-text>
 			</a-form>
 			</a-rounded>
 
 			<!-- Toast pop-up -->
-			<a-toast message="This is a toast" action="Got it"></a-toast>
+			<a-toast duration="100000" autoshow="false" font="kelsonsans" message="Click the search box!" action="Got it"></a-toast>
 			
 			<!-- Ground plane -->
 			<a-entity position="0 0 0" geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6;"></a-entity>
@@ -123,13 +127,7 @@
 			<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls>
 				<a-sphere class="head" visible="false" random-color></a-sphere>
 			</a-entity>
-			
-			<!-- This is commented it out because we're using a gradient "sky" and ground plane -->
-			<!-- a-sky src="#sky" rotation="0 -90 0"></a-sky>-->
- 
-			<!-- Lighting -->
-			<!--a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity-->
-			<!--a-entity light="color: #ffaaff; intensity: 1.5" position="5 5 5"></a-entity--->
+
 		</a-scene>
 
 		<!-- This script and all other utilities should be moved -->
@@ -160,17 +158,20 @@
 		let toast = document.querySelector('a-toast');
 		let input_box = document.querySelector('a-input');
 		let keyboard = document.querySelector('a-keyboard');
-
+		let help_button = document.querySelector('a-button');
+		
 		// Show toast pop-up when button is clicked, and close when the toast is clicked
 		toast.addEventListener('actionclick', ()=>{
 			toast.hide();
 		})
 		
 
-		/*/ show the keyboard after clicking the button
-        button.addEventListener('click', ()=> {
-            keyboard.open();
-        })*/
+		// Show a help message after clicking the button
+        help_button.addEventListener('click', ()=> {
+			toast.setAttribute('scale', {x:1.5, y:1.5, z:1.5});
+			toast.setAttribute('position', {x:-1.49, y:.368, z:-1.6}); 
+			toast.show();
+        })
 		
 		// Track keyboard input
 		keyboard.addEventListener('input', (e)=>{
@@ -196,7 +197,7 @@
 			console.log("Dismiss: ", e);
 			keyboard.dismiss();
 			make_youtube_query = true;
-			call_youtube_api(make_youtube_query);
+			call_youtube_api(make_youtube_query); // Query YouTube's API
 			search_query = '' // Reset query for the next search
 		});
 		</script>
