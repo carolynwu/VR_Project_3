@@ -1,11 +1,13 @@
 <html>
   <head>
 	<meta charset="utf-8">
-	<title>CS 4331-002: Project 3 by Xujia Wu and Simon Woldemichael</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta charset="UTF-8">
 	<meta name="description" content="CS 4331-002 Special Topics in CS: Virtual Reality - Project 3">
 	<meta name="keywords" content="Virtual,Reality,Project">
 	<meta name="author" content="Xujia Wu and Simon Woldemichael">
+	
+	<title>CS 4331-002: Project 3 by Xujia Wu and Simon Woldemichael</title>
 	
 	<!-- aframe-materials keyboard has only been tested with A-Frame v0.6.1 -->
 	<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
@@ -133,7 +135,7 @@
 			</a-rounded>
 
 			<!-- Toast pop-up -->
-			<a-toast id="youtube-toast" duration="100000" autoshow="false" font="kelsonsans" message="Click the search box!" action="Got it"></a-toast>
+			<a-toast id="youtube-toast" duration="100000" autoshow="false" font="kelsonsans" message="Search for a video!" action="Got it"></a-toast>
 			
 			<!-- Video Player -->
 			<a-video></a-video>
@@ -152,27 +154,37 @@
 			<a-entity id="interface-title-2" text="value:Flickr Image Search; color:#FF0084; shader: msdf; font:monoid;" scale="15 15 15" position="4.531 7.283 -3.42"></a-entity>
 			
 			<!-- Note: Since only three videos are being shown, the last two of every attribute have visible="false" -->
-			<a-rounded id="flickr-interface" width="10" height="6" position="-3.49 1.567 -3.44" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
+			<a-rounded id="flickr-interface" width="9.1" height="6.2" position="-3.49 1.567 -3.44" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
 			<a-form>
 				<a-button id="flickr-help-button" position=-1.56 -0.32 2.469" rotation="0 45 0" name="help" value="Need Help?" color="#FFFFFF"></a-button>
 				
 				<!-- Video Thumbnails -->
-				<a-image width="2" height="2" color="black" id="flickrimage1" position=".559 2.573 .010" material="shader: standard"></a-image>
-				<a-image width="2" height="2" color="black" id="flickrimage2" position=".552 1.546 .008" material="shader: standard"></a-image>
-				<a-image width="2" height="2" color="black" id="flickrimage3" position=".548 .535 .006" material="shader: standard"></a-image>
-				<a-image width="2" height="2" color="black" id="flickrimage4" position="" material="shader: standard"></a-image>
-				<a-image width="2" height="2" color="black" id="flickrimage5" position="" material="shader: standard"></a-image>
-				<a-image width="2" height="2" color="black" id="flickrimage6" position=".559 2.573 .010" material="shader: standard"></a-image>
-				<a-image width="2" height="2" color="black" id="flickrimage7" position=".552 1.546 .008" material="shader: standard"></a-image>
-				<a-image width="2" height="2" color="black" id="flickrimage8" position=".548 .535 .006" material="shader: standard"></a-image>
-				<a-image width="2" height="2" color="black" id="flickrimage9" position="" material="shader: standard"></a-image>
-				<a-image width="2" height="2" color="black" id="flickrimage10" position="" material="shader: standard"></a-image>
+				<a-image width="2" height="2" id="flickrimage1" position="1.066 5.099 0.010" material="shader: standard"></a-image>
+				<a-image width="2" height="2" id="flickrimage2" position="1.066 3.083 0.010" material="shader: standard"></a-image>
+				<a-image width="2" height="2" id="flickrimage3" position="1.066 1.056 0.010" material="shader: standard"></a-image>
+				<a-image width="2" height="2" id="flickrimage4" position="3.446 5.099 0.010" material="shader: standard"></a-image>
+				<a-image width="2" height="2" id="flickrimage5" position="3.446 3.083 0.010" material="shader: standard"></a-image>
+				<a-image width="2" height="2" id="flickrimage6" position="3.446 1.056 0.010" material="shader: standard"></a-image>
+				<a-image width="2" height="2" id="flickrimage7" position="5.711 5.099 0.010" material="shader: standard"></a-image>
+				<a-image width="2" height="2" id="flickrimage8" position="5.711 3.083 0.010" material="shader: standard"></a-image>
+				<a-image width="2" height="2" id="flickrimage9" position="5.711 1.056 0.010" material="shader: standard"></a-image>
+				<a-image width="2" height="2" id="flickrimage10" position="8.025 5.099 0.010" material="shader: standard"></a-image>
+				<a-image width="2" height="2" id="flickrimage11" position="8.025 3.083 0.010" material="shader: standard"></a-image>
+				<a-image width="2" height="2" id="flickrimage12" position="8.025 1.056 0.010" material="shader: standard"></a-image>
 				
 			</a-form>
 			</a-rounded>
-
+			
+			<script>
+			 // Set default image for image containers
+			 for(var x = 1; x <= 12; x++){
+				var img_container = document.getElementById('flickrimage'+x);
+				img_container.setAttribute('src', 'https://i1.wp.com/wisteriaandrose.com/wp-content/uploads/2015/03/transparent-flickr-logo-icon-copy.png');
+			 }
+			</script>
+			
 			<!-- Toast pop-up -->
-			<a-toast id="flickr-toast" duration="100000" autoshow="false" font="kelsonsans" message="Click the search box!" action="Got it"></a-toast>
+			<a-toast id="flickr-toast" duration="100000" autoshow="false" font="kelsonsans" message="Search for an image!" action="Got it"></a-toast>
 			</a-entity>
 			<!-- END FLICKR SECTOIN -->
 			
