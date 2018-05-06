@@ -7,7 +7,7 @@
 	<meta name="keywords" content="Virtual,Reality,Project">
 	<meta name="author" content="Xujia Wu and Simon Woldemichael">
 	
-	<!-- a-frame-materials keyboard has only been tested with A-Frame v0.6.1 -->
+	<!-- aframe-materials keyboard has only been tested with A-Frame v0.6.1 -->
 	<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
 	<!--<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>-->
 	
@@ -19,6 +19,8 @@
 	<script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
 	<script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
 	<script src="https://cdn.rawgit.com/etiennepinchon/aframe-material/master/dist/aframe-material.min.js"></script>
+	
+	<script src="https://unpkg.com/aframe-video-illumination-component/dist/aframe-video-illumination-component.min.js"></script>
 	
 	<!-- Helper script to ensure that all new players that join the scene are spawned within the same place -->
 	<script src="/js/spawn-in-circle.component.js"></script>
@@ -34,17 +36,23 @@
 	<script type="text/javascript">
 		AFRAME.ASSETS_PATH = "./assets";
 		var youtube_search_query = '';
+		var flickr_search_query = '';
+		var make_flickr_query = false;
 		var make_youtube_query = false;
-	</script>
-	
-				
-	<script type="text/javascript">
-	function styleKeyboard(){
-		// Update the keyboard's settings since it allows outline changes
-		var key_styler = document.querySelector("a-keyboard");
+
+	// Update the keyboard's settings since it allows outline changes
+	function styleYoutubeKeyboard(){
+		var key_styler = document.getElementById('youtube-keyboard');
 		key_styler.setAttribute('position', {x: -2.15, y: 0.015, z: -2.00});
 		key_styler.setAttribute('scale', {x: 3.519, y: 3.519, z: 3.519});
 	}
+	
+	function styleFlickrKeyboard(){
+		var key_styler = document.getElementById('flickr-keyboard');
+		key_styler.setAttribute('position', {x: -2.15, y: 0.015, z: -2.00});
+		key_styler.setAttribute('scale', {x: 3.519, y: 3.519, z: 3.519});
+	}
+
 	</script>
 
 </head>
@@ -87,10 +95,11 @@
 			
 			<!-- BEGIN YOUTUBE SECTION -->
 			<!-- Make keyboard and display an input box for youtube search query -->
+			<a-entity visible="false">
 			<a-keyboard id="youtube-keyboard" ></a-keyboard>
 			
 			<!-- When the user clicks the input box, the keyboard will be scaled and repositioned. Unable to do this with attribute tags for some reason -->
-			<a-input id="youtube-input" onClick="styleKeyboard()" position="-.65 1.235 -3.35" rotation="-21.4 0 0" placeholder="Input video search query" color="black" width="1" scale="2.163 2.163 2.163"></a-input>
+			<a-input id="youtube-input" onClick="styleYoutubeKeyboard()" position="-.65 1.235 -3.35" rotation="-21.4 0 0" placeholder="Input video search query" color="black" width="1" scale="2.163 2.163 2.163"></a-input>
 			
 			<!-- Video selection interface -->
 			<a-entity id="interface-title-1" text="value:YouTube Video Search; color:#E52D27; shader: msdf; font:mozillavr;" scale="15 15 15" position="4.571 5.134 -3.42"></a-entity>
@@ -125,8 +134,47 @@
 
 			<!-- Toast pop-up -->
 			<a-toast id="youtube-toast" duration="100000" autoshow="false" font="kelsonsans" message="Click the search box!" action="Got it"></a-toast>
+			
+			<!-- Video Player -->
+			<a-video></a-video>
+			</a-entity>
 			<!-- END YOUTUBE SECTION -->
 			
+			<!-- BEGIN FLICKR SECTION -->
+			<!-- Make keyboard and display an input box for youtube search query -->
+			<a-entity id="flickr-env" rotation="0 -90 0">
+			<a-keyboard id="flickr-keyboard" ></a-keyboard>
+			
+			<!-- When the user clicks the input box, the keyboard will be scaled and repositioned. Unable to do this with attribute tags for some reason -->
+			<a-input id="flickr-input" onClick="styleFlickrKeyboard()" position="-.65 1.235 -3.35" rotation="-21.4 0 0" placeholder="Input image search query" color="black" width="1" scale="2.163 2.163 2.163"></a-input>
+			
+			<!-- Image viewing interface -->
+			<a-entity id="interface-title-2" text="value:Flickr Image Search; color:#FF0084; shader: msdf; font:monoid;" scale="15 15 15" position="4.531 7.283 -3.42"></a-entity>
+			
+			<!-- Note: Since only three videos are being shown, the last two of every attribute have visible="false" -->
+			<a-rounded id="flickr-interface" width="10" height="6" position="-3.49 1.567 -3.44" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
+			<a-form>
+				<a-button id="flickr-help-button" position=-1.56 -0.32 2.469" rotation="0 45 0" name="help" value="Need Help?" color="#FFFFFF"></a-button>
+				
+				<!-- Video Thumbnails -->
+				<a-image width="2" height="2" color="black" id="flickrimage1" position=".559 2.573 .010" material="shader: standard"></a-image>
+				<a-image width="2" height="2" color="black" id="flickrimage2" position=".552 1.546 .008" material="shader: standard"></a-image>
+				<a-image width="2" height="2" color="black" id="flickrimage3" position=".548 .535 .006" material="shader: standard"></a-image>
+				<a-image width="2" height="2" color="black" id="flickrimage4" position="" material="shader: standard"></a-image>
+				<a-image width="2" height="2" color="black" id="flickrimage5" position="" material="shader: standard"></a-image>
+				<a-image width="2" height="2" color="black" id="flickrimage6" position=".559 2.573 .010" material="shader: standard"></a-image>
+				<a-image width="2" height="2" color="black" id="flickrimage7" position=".552 1.546 .008" material="shader: standard"></a-image>
+				<a-image width="2" height="2" color="black" id="flickrimage8" position=".548 .535 .006" material="shader: standard"></a-image>
+				<a-image width="2" height="2" color="black" id="flickrimage9" position="" material="shader: standard"></a-image>
+				<a-image width="2" height="2" color="black" id="flickrimage10" position="" material="shader: standard"></a-image>
+				
+			</a-form>
+			</a-rounded>
+
+			<!-- Toast pop-up -->
+			<a-toast id="flickr-toast" duration="100000" autoshow="false" font="kelsonsans" message="Click the search box!" action="Got it"></a-toast>
+			</a-entity>
+			<!-- END FLICKR SECTOIN -->
 			
 			<!-- Begin networking setup for RTC -->
 			<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls>
@@ -171,7 +219,6 @@
 			youtube_toast.hide();
 		})
 		
-
 		// Show a help message after clicking the button
         youtube_help_button.addEventListener('click', ()=> {
 			youtube_toast.setAttribute('scale', {x:1.5, y:1.5, z:1.5});
@@ -207,6 +254,55 @@
 			youtube_search_query = '' // Reset query for the next search
 		});
 		/* END YOUTUBE UI/UX EVENT LISENTERS */
+		
+		/* BEGIN FLICKR UI/UX EVENT LISENTERS */
+		let flickr_toast = document.getElementById('flickr-toast');
+		let flickr_input_box = document.getElementById('flickr-input');
+		let flickr_keyboard = document.getElementById('flickr-keyboard');
+		let flickr_help_button = document.getElementById('flickr-help-button');
+		
+		/* BEGIN YOUTUBE UI/UX EVENT LISENTERS */
+		// Show toast pop-up when button is clicked, and close when the toast is clicked
+		flickr_toast.addEventListener('actionclick', ()=>{
+			flickr_toast.hide();
+		})
+		
+		// Show a help message after clicking the button
+        flickr_help_button.addEventListener('click', ()=> {
+			flickr_toast.setAttribute('scale', {x:1.5, y:1.5, z:1.5});
+			flickr_toast.setAttribute('position', {x:-1.49, y:.368, z:-1.6}); 
+			flickr_toast.show();
+        })
+		
+		// Track keyboard input
+		flickr_keyboard.addEventListener('input', (e)=>{
+			flickr_search_query += e.detail;
+			//console.log(youtube_search_query);
+		});
+
+		// When the user presses the enter key
+		flickr_keyboard.addEventListener('enter', (e)=>{
+			console.log("Enter key pressed!")
+		});
+		
+		// When the user presses backspace
+		flickr_keyboard.addEventListener('backspace', (e)=>{
+			flickr_input_box.value = flickr_input_box.value.substring(0, flickr_input_box.value.length - 1);
+			flickr_search_query = flickr_search_query.substring(0, flickr_search_query.length - 1);
+			console.log(flickr_input_box.value);
+			console.log(flickr_search_query);
+		});
+
+		// Listen for keyboard close
+		flickr_keyboard.addEventListener('dismiss', (e)=>{
+			console.log("Dismiss: ", e);
+			flickr_keyboard.dismiss();
+			make_flickr_query = true;
+			call_flickr_api(make_flickr_query); // Query Flickr's API
+			flickr_search_query = '' // Reset query for the next search
+		});
+		
+		/* END FLICKR UI/UX EVENT LISENTERS */
 		</script>
 	
 	</body>
