@@ -8,8 +8,8 @@
 	<meta name="author" content="Xujia Wu and Simon Woldemichael">
 	
 	<!-- a-frame-materials keyboard has only been tested with A-Frame v0.6.1 -->
-	<!--script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script-->
-	<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+	<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+	<!--<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>-->
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
 	<script src="/easyrtc/easyrtc.js"></script>
@@ -40,6 +40,7 @@
 				
 	<script type="text/javascript">
 	function styleKeyboard(){
+		console.log("what the fuck");
 		// Update the keyboard's settings since it allow outline changes
 		var key_styler = document.querySelector("a-keyboard");
 		key_styler.setAttribute('position', {x: -2.15, y: 0.015, z: -2.00});
@@ -72,25 +73,6 @@
 					</a-entity>
 				</template>
 				
-				<template id="input_box">
-					<a-entity>
-						<a-input class="search_query_string" 
-						onClick="styleKeyboard()" 
-						position="-.65 1.235 -3.35" 
-						rotation="-21.4 0 0" 
-						placeholder="Input video search query" 
-						color="black" 
-						width="1" 
-						scale="2.163 2.163 2.163"></a-input>
-					</a-entity>
-				</template>
-				
-				<template id="user_keyboard">
-				<a-entity>
-					<a-keyboard class="user_input_interface"></a-keyboard>
-				</a-entity>
-				</template>
-				
 			</a-assets>
 			
 			<!-- Laser controls entity for WebVR compatible headsets? -->
@@ -103,18 +85,16 @@
 			<a-camera raycaster="far: 150; objects: .intersectable" look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera>
 
 			<!-- Make keyboard and display an input box for search query -->
-			<!--a-entity class="user_input_interface" networked="template:#user_keyboard;"></a-entity-->
 			<a-keyboard></a-keyboard>
 			
 			<!-- When the user clicks the input box, the keyboard will be scaled and repositioned. Unable to do this with attribute tags for some reason -->
-			<a-entity networked="template:#input_box;"></a-entity>
-			<a-input class="search_query_string"></a-input>
+			<a-input onClick="styleKeyboard()" position="-.65 1.235 -3.35" rotation="-21.4 0 0" placeholder="Input video search query" color="black" width="1" scale="2.163 2.163 2.163"></a-input>
 			
 			<!-- Video selection interface -->
 			<!-- Note: Since only three videos are being shown, the last two of every attribute have visible="false" -->
 			<a-rounded position="-1.18 1.567 -3.44" width="4" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
 			<a-form>
-				<a-button position=-1.56 -0.32 2.469" rotation="0 45 0" name="help" value="Need Help?" color="#FF0000"></a-button>
+				<a-button position=-1.56 -0.32 2.469" rotation="0 45 0" name="help" value="Need Help?" color="#FFFFFF"></a-button>
 				
 				<!-- Video Thumbnails -->
 				<a-image id="image1" position=".559 2.573 .010" material="shader: standard"></a-image>
@@ -148,8 +128,8 @@
 			<!-- a-sky src="#sky" rotation="0 -90 0"></a-sky>-->
  
 			<!-- Lighting -->
-			<a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
-			<a-entity light="color: #ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+			<!--a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity-->
+			<!--a-entity light="color: #ffaaff; intensity: 1.5" position="5 5 5"></a-entity--->
 		</a-scene>
 
 		<!-- This script and all other utilities should be moved -->
@@ -169,28 +149,6 @@
 			]
 		});
 		
-		console.log("Networking input_box schema...");
-		// Input box schema
-		NAF.schemas.add({
-			template: '#input_box',
-			components: {
-			   selector: '.search_query_string',
-			   component: 'input',
-			   property: 'value'
-			}
-		});
-		
-		console.log("Networking keyboard schema...");
-		// Input box schema
-		/*NAF.schemas.add({
-			template: '#user_keyboard',
-			components: [{
-			   selector: '.user_input_interface',
-			   component: 'keyboard',
-			   property: 'is-open'
-			}]
-		});*/
-		
 		// Called by Networked-Aframe when connected to server
 		function onConnect () {
 			console.log("onConnect", new Date());
@@ -201,7 +159,7 @@
 		<script type="text/javascript">
 		let toast = document.querySelector('a-toast');
 		let input_box = document.querySelector('a-input');
-		let keyboard = document.querySelector("a-keyboard");
+		let keyboard = document.querySelector('a-keyboard');
 
 		// Show toast pop-up when button is clicked, and close when the toast is clicked
 		toast.addEventListener('actionclick', ()=>{
@@ -214,35 +172,33 @@
             keyboard.open();
         })*/
 		
-		function onInputBoxLoad(){
-			// Track keyboard input
-			keyboard.addEventListener('input', (e)=>{
-				search_query += e.detail;
-				//console.log(search_query);
-			});
+		// Track keyboard input
+		keyboard.addEventListener('input', (e)=>{
+			search_query += e.detail;
+			//console.log(search_query);
+		});
 
-			// When the user presses the enter key
-			keyboard.addEventListener('enter', (e)=>{
-				console.log("Enter key pressed!")
-			});
-			
-			// When the user presses backspace
-			keyboard.addEventListener('backspace', (e)=>{
-				input_box.value = input_box.value.substring(0, input_box.value.length - 1);
-				search_query = search_query.substring(0, search_query.length - 1);
-				console.log(input_box.value);
-				console.log(search_query);
-			});
+		// When the user presses the enter key
+		keyboard.addEventListener('enter', (e)=>{
+			console.log("Enter key pressed!")
+		});
+		
+		// When the user presses backspace
+		keyboard.addEventListener('backspace', (e)=>{
+			input_box.value = input_box.value.substring(0, input_box.value.length - 1);
+			search_query = search_query.substring(0, search_query.length - 1);
+			console.log(input_box.value);
+			console.log(search_query);
+		});
 
-			// Listen for keyboard close
-			keyboard.addEventListener('dismiss', (e)=>{
-				console.log("Dismiss: ", e);
-				keyboard.dismiss();
-				make_youtube_query = true;
-				call_youtube_api(make_youtube_query);
-				search_query = '' // Reset query for the next search
-			});
-		}
+		// Listen for keyboard close
+		keyboard.addEventListener('dismiss', (e)=>{
+			console.log("Dismiss: ", e);
+			keyboard.dismiss();
+			make_youtube_query = true;
+			call_youtube_api(make_youtube_query);
+			search_query = '' // Reset query for the next search
+		});
 		</script>
 	
 	</body>
