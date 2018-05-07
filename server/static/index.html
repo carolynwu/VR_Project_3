@@ -10,28 +10,36 @@
 	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
+	<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+	<link href="/css/particle-style.css" rel="stylesheet" type="text/css">
+	
 	<link href="/css/styles.css" rel="stylesheet" type="text/css">
+	
   </head>
   <body>
+	<!-- Particle.js -->
+	<div id="particle-container"></div>
+	<script src="/js/particleConfig.js"></script>
+		
     <div class="login-page">
       <div class="form">
         <h2>Enter Room Name and Username</h2>
         <form class="login-form" action="/hub.html" method="GET">
           <input type="text" name="room" placeholder="room" required/>
           <input type="text" name="username" placeholder="username" required/>
-          <!-- Raised button -->
 		<button style="line-height: 10px;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"> Let's Go!</button>
         </form>
       </div>
     </div>
 	
 	<footer class="mdl-mini-footer">
-            <div class="mdl-mini-footer__left-section">
-                <div class="mdl-logo">CS 4331-002: Project 3 by Xujia Wu and Simon Woldemichael</div>
-                <ul class="mdl-mini-footer__link-list">
-                    <li>Social Media VR!</li>
-                </ul>
-            </div>
-        </footer>
+		<div class="mdl-mini-footer__left-section">
+			<div class="mdl-logo">CS 4331-002: Project 3 by Xujia Wu and Simon Woldemichael</div>
+			<ul class="mdl-mini-footer__link-list">
+				<li>Social Media VR!</li>
+			</ul>
+		</div>
+	</footer>
+	
   </body>
 </html>
