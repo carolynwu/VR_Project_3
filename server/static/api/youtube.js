@@ -21,6 +21,7 @@ var VIDEO_DOMS = ["video1", "video2", "video3", "video4", "video5"];
 var IMAGE_CONTAINERS = ["image1", "image2", "image3", "image4", "image5"];
 var TITLE_CONTAINERS = ["title1", "title2", "title3", "title4", "title5"];
 var DESCRIPTION_CONTAINERS = ["description1", "description2", "description3", "description4", "description5"];
+var HYPERLINK_CONTAINERS = ["urlstore1", "urlstore2", "urlstore3", "urlstore4", "urlstore5"];
 
 function call_youtube_api(make_query){
 	// Called in showResponse() when all of the data needed to show the front-end 
@@ -28,7 +29,7 @@ function call_youtube_api(make_query){
 	function formatVideoInformation(){
 		console.log("FUNCTION: formatVideoInformation()");
 		for(var x = 0; x < REQUEST_LIMIT/2; x++){
-			let video_url = video_base + video_id[x];
+			var video_url = video_base + video_id[x];
 			console.log(video_url);
 			/*document.getElementById(VIDEO_DOMS[x]).innerHTML += "<p>" + video_title[x] +"</p> <br>";
 			document.getElementById(VIDEO_DOMS[x]).innerHTML += "<p>" + video_description[x] +"</p> <br>";
@@ -39,6 +40,7 @@ function call_youtube_api(make_query){
 			document.querySelector('#'+IMAGE_CONTAINERS[x]).setAttribute('src', video_thumb[x]);
 			document.querySelector('#'+TITLE_CONTAINERS[x]).setAttribute('value', video_title[x]);
 			document.querySelector('#'+DESCRIPTION_CONTAINERS[x]).setAttribute('value', video_description[x]);
+			document.querySelector('#'+HYPERLINK_CONTAINERS[x]).setAttribute('value', video_url);
 		}	
 	}
 
