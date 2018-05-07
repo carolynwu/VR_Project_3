@@ -5,14 +5,8 @@ var flickr_keyboard = document.getElementById('flickr-keyboard');
 var flickr_help_button = document.getElementById('flickr-help-button');
 
 // Show toast pop-up when button is clicked, and close when the toast is clicked
-flickr_toast.addEventListener('actionclick', ()=>{
+flickr_toast.addEventListener('actionevent', ()=>{
 	flickr_toast.hide();
-});
-
-// Show a help message after clicking the button
-flickr_help_button.addEventListener('click', ()=> {
-	flickr_toast.setAttribute('scale', {x:1.5, y:1.5, z:1.5});
-	flickr_toast.show();
 });
 
 // Track keyboard input

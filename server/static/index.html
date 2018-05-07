@@ -31,6 +31,13 @@
 		key_styler.setAttribute('position', {x: -2.15, y: 0.015, z: -2.00});
 		key_styler.setAttribute('scale', {x: 3.519, y: 3.519, z: 3.519});
 	}
+	
+	// Show a help message after clicking the button
+	function onFlickerHelpButtonClick(){
+		var flickr_toast = document.getElementById('flickr-toast');
+		flickr_toast.setAttribute('scale', {x:1.5, y:1.5, z:1.5});
+		flickr_toast.show();
+	}
 	</script>
 	
 	
@@ -58,7 +65,7 @@
 </head>
 	<body>
 		<!-- Begin A-Scene -->
-		<a-scene networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
+		<a-scene cursor="rayOrigin: mouse" networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
 			<!-- Define assets -->
 			<a-assets>
 				<img id="grid" src="https://i.imgur.com/25P1geh.png" crossorigin="anonymous" />
@@ -91,7 +98,7 @@
 			<a-entity position="0 0 0" geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6;"></a-entity>
 			
 			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking)-->
-			<a-camera raycaster="far: 150; objects: .intersectable" look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera>
+			<a-camera raycaster="far: 150; objects: .intersectable" look-controls-enabled wasd-controls-enabled></a-camera>
 			
 			<!-- BEGIN FLICKR SECTION -->
 			<!-- Make keyboard and display an input box for Flickr search query -->
@@ -106,7 +113,7 @@
 			<!-- Note: Since only three videos are being shown, the last two of every attribute have visible="false" -->
 			<a-rounded id="flickr-interface" width="9.1" height="6.2" position="-3.49 1.567 -3.44" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
 			<a-form>
-				<a-button id="flickr-help-button" position="-1.56 -0.32 2.469" rotation="0 45 0" name="flickr" value="Need Help??" color="#FFFFFF"></a-button>
+				<a-button onClick="onFlickerHelpButtonClick()" id="flickr-help-button" position="-1.56 -0.32 2.469" rotation="0 45 0" name="flickr" value="Need Help??" color="#FFFFFF"></a-button>
 				
 				<!-- Video Thumbnails -->
 				<a-image width="2" height="2" id="flickrimage1" position="1.066 5.099 0.010" material="shader: standard"></a-image>
@@ -145,6 +152,7 @@
 
 		</a-scene>
 		
+		<script type="text/javascript" src="js/project3.js"></script
 		<script type="text/javascript" src="js/flickr-interactions.js"></script>
 	</body>
 </html>
