@@ -24,7 +24,7 @@
 		}
 		
 		// Show a help message after clicking the button
-		function onFlickerHelpButtonClick(){
+		function onFlickrHelpButtonClick(){
 			var flickr_toast = document.getElementById('flickr-toast');
 			flickr_toast.setAttribute('scale', {x:1.5, y:1.5, z:1.5});
 			flickr_toast.show();
@@ -51,6 +51,7 @@
 	<!-- Dependencies for Flickr -->
 	<script src="api/flickr.js"></script>
 	
+	<script defer src="js/flickr-interactions.js"></script>
 </head>
 	<body>
 		<!-- Begin A-Scene -->
@@ -103,7 +104,7 @@
 			<a-rounded id="flickr-interface" width="9.1" height="6.2" position="-3.49 1.567 -3.44" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
 			<a-form>
 				<!-- Help button -->
-				<a-button onClick="onFlickerHelpButtonClick()" id="flickr-help-button" position="-1.56 -0.32 2.469" rotation="0 45 0" name="flickr" value="Need Help??" color="#FFFFFF"></a-button>
+				<a-button onClick="onFlickrHelpButtonClick()" id="flickr-help-button" position="-1.56 -0.32 2.469" rotation="0 45 0" name="flickr" value="Need Help??" color="#FFFFFF"></a-button>
 				
 				<!-- Images -->
 				<a-image width="2" height="2" id="flickrimage1" position="1.066 5.099 0.010" material="shader: standard"></a-image>
