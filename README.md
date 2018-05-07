@@ -3,10 +3,20 @@
 <p align="center"><img src="https://img.shields.io/badge/platform-Web-blue.svg" alt="Supported platforms">
 <a href="https://aframe.io/"><img src="https://img.shields.io/badge/WebVR-A--Frame-ef2d5e.png"/></a></p>
 <h3 align="center">Due: Tuesday, May 8, 2018</h3>
-<h3 align="center">Video Demonstration :+1:</h3>
+<h3 align="center">Video Demonstration</h3>
+
+<p align="center">
+  <a href="https://youtu.be/0L-9mx_iczQ"><img width="70%" height="70%" src="https://i.imgur.com/9g1xs4z.png"></a>
+</p>
+
+***
 
 <p align="center">
   <img width="30%" height="30%" src="https://www.drupal.org/files/project-images/download_6.png">
+</p>
+
+<p align="center">
+  <h3>Report</h3>
 </p>
 
 - For Project 3 of this course, we proposed that we utilize A-Frame for WebGL based Virtual Reality and AR.js for WebGL based Augmented Reality to provide users with a multiplayer social interaction environment. This multiuser environment would allow users to access and experience data (i.e videos, photos and webpages) with other users at the same time. The AR aspect of our application would be more of a supplement to the online Web Application. Augmented Reality markers generated with AR.js would contain supplementary data (bookmarks/links) for users of our web application. We believed this could be achieved by making API calls using JavaScript. We would mainly like our program to function on mobile devices (i.e. Android, iPhone, Windows Phone). Our team consists of two members; Simon Woldemichael and Xujia Wu. Links to potential libraries and free API's to be used are linked below.
@@ -29,9 +39,6 @@
   - [Twitter API](https://dev.twitter.com/web/javascript) :baby_chick:
   - [Node.js](https://nodejs.org/en/) :checkered_flag: (used to serve the Web Real Time Connection environment)
   - [Material Design Lite](https://getmdl.io/) :milky_way:
-  - [Song 1](https://www.youtube.com/watch?v=96YCJaUFxaM)
-  - [Song 2](https://www.youtube.com/watch?v=6FhYXf9vp6w)
-  - [Song 3]()
 
 ### Contributors
   - [Xujia Wu](https://github.com/carolynwu)
@@ -95,6 +102,9 @@ function updateVideo(ix){
   - [A-Room component](https://www.npmjs.com/package/aframe-room-component)
   - [A-Frame fonts](https://github.com/etiennepinchon/aframe-fonts/tree/master/fonts)
   - [TV Model (Google Poly)](https://poly.google.com/view/2flJebZTUrg)
+  - [Song 1](https://www.youtube.com/watch?v=96YCJaUFxaM)
+  - [Song 2](https://www.youtube.com/watch?v=6FhYXf9vp6w)
+  - [Song 3](https://www.youtube.com/watch?v=7ZguAEoNpZw)
 
 ### References
   - Please visit our [Trello Board](https://trello.com/b/GRBMbBuo/cs-4331-002-virtual-reality-project-3) to see references and sources
@@ -119,7 +129,7 @@ function updateVideo(ix){
   <img width="90%" height="90%" src="https://i.imgur.com/2rX3zDV.png">
 </p>
 <ul>
-  <li>In using the Material Design Lite JavaScript library, we were able to make visually appealing front-end components. The MDL library, as many people know, allows users to create Google-esque (Material Design) webpage components. Material design is defined as [a visual language that synthesizes the classic principles of good design with the innovation of technology and science](https://material.io/design/introduction/). Our color schemes, room and username selection page, interface buttons, keyboard, input boxes, and rounded components all follow the "visual language" of Material Design.</li>
+  <li>In using the Material Design Lite JavaScript library, we were able to make visually appealing front-end components. The MDL library, as many people know, allows users to create Google-esque (Material Design) webpage components. Material design is defined as <a href="https://material.io/design/introduction/">a visual language that synthesizes the classic principles of good design with the innovation of technology and science</a>. Our color schemes, room and username selection page, interface buttons, keyboard, input boxes, and rounded components all follow the "visual language" of Material Design.</li>
 <br>
 	<li>Here is our Login Screen. The background container uses <a href="https://github.com/VincentGarreau/particles.js/">Particles.js</a>.</li>
 </ul>
