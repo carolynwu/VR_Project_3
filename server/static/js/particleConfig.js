@@ -38,7 +38,7 @@ particlesJS("particle-container", {
       }
     },
     "size": {
-      "value": 3,
+      "value": 6,
       "random": true,
       "anim": {
         "enable": false,
@@ -56,12 +56,12 @@ particlesJS("particle-container", {
     },
     "move": {
       "enable": true,
-      "speed": 1,
+      "speed": 20,
       "direction": "none",
       "random": false,
       "straight": false,
       "out_mode": "out",
-      "bounce": false,
+      "bounce": true,
       "attract": {
         "enable": false,
         "rotateX": 600,
