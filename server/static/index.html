@@ -1,7 +1,5 @@
 <html>
   <head>
-	<meta charset="utf-8">
-	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta charset="UTF-8">
 	<meta name="description" content="CS 4331-002 Special Topics in CS: Virtual Reality - Project 3">
 	<meta name="keywords" content="Virtual,Reality,Project">
@@ -13,27 +11,6 @@
 	<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
 	<!--<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>-->
 	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
-	<script src="/easyrtc/easyrtc.js"></script>
-	<script src="https://unpkg.com/networked-aframe/dist/networked-aframe.min.js"></script>
-	<script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
-	
-	<script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
-	<script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
-	<script src="https://cdn.rawgit.com/etiennepinchon/aframe-material/master/dist/aframe-material.min.js"></script>
-	
-	<script src="https://unpkg.com/aframe-video-illumination-component/dist/aframe-video-illumination-component.min.js"></script>
-	
-	<!-- Helper script to ensure that all new players that join the scene are spawned within the same place -->
-	<script src="/js/spawn-in-circle.component.js"></script>
-
-	<!-- Config -->
-	<script src="api/config.js"></script>
-	
-	<!-- Depenendices for YouTube -->
-	<script src="api/youtube.js"></script>
-	<script src="https://apis.google.com/js/client.js"></script>
-
 	<!-- Globals for simplicity -->
 	<script type="text/javascript">
 		AFRAME.ASSETS_PATH = "./assets";
@@ -54,8 +31,29 @@
 		key_styler.setAttribute('position', {x: -2.15, y: 0.015, z: -2.00});
 		key_styler.setAttribute('scale', {x: 3.519, y: 3.519, z: 3.519});
 	}
-
 	</script>
+	
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+	<script src="/easyrtc/easyrtc.js"></script>
+	<script src="https://unpkg.com/networked-aframe/dist/networked-aframe.min.js"></script>
+	<script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
+	
+	<script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+	<script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+	<script src="https://cdn.rawgit.com/etiennepinchon/aframe-material/master/dist/aframe-material.min.js"></script>
+	
+	<!-- <script src="https://unpkg.com/aframe-video-illumination-component/dist/aframe-video-illumination-component.min.js"></script> -->
+	
+	<!-- Helper script to ensure that all new players that join the scene are spawned within the same place -->
+	<script src="/js/spawn-in-circle.component.js"></script>
+
+	<!-- Config -->
+	<script src="api/config.js"></script>
+	
+	<!-- Depenendices for YouTube -->
+	<script src="api/youtube.js"></script>
+	<script src="https://apis.google.com/js/client.js"></script>
 
 </head>
 	<body>
@@ -95,60 +93,12 @@
 			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking)-->
 			<a-camera raycaster="far: 150; objects: .intersectable" look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera>
 			
-			<!-- BEGIN YOUTUBE SECTION -->
-			<!-- Make keyboard and display an input box for youtube search query -->
-			<a-entity visible="false">
-			<a-keyboard id="youtube-keyboard" ></a-keyboard>
-			
-			<!-- When the user clicks the input box, the keyboard will be scaled and repositioned. Unable to do this with attribute tags for some reason -->
-			<a-input id="youtube-input" onClick="styleYoutubeKeyboard()" position="-.65 1.235 -3.35" rotation="-21.4 0 0" placeholder="Input video search query" color="black" width="1" scale="2.163 2.163 2.163"></a-input>
-			
-			<!-- Video selection interface -->
-			<a-entity id="interface-title-1" text="value:YouTube Video Search; color:#E52D27; shader: msdf; font:mozillavr;" scale="15 15 15" position="4.571 5.134 -3.42"></a-entity>
-			
-			<!-- Note: Since only three videos are being shown, the last two of every attribute have visible="false" -->
-			<a-rounded id="youtube-interface" position="-1.18 1.567 -3.44" width="4" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
-			<a-form>
-				<a-button id="youtube-help-button" position=-1.56 -0.32 2.469" rotation="0 45 0" name="help" value="Need Help?" color="#FFFFFF"></a-button>
-				
-				<!-- Video Thumbnails -->
-				<a-image id="image1" position=".559 2.573 .010" material="shader: standard"></a-image>
-				<a-image id="image2" position=".552 1.546 .008" material="shader: standard"></a-image>
-				<a-image id="image3" position=".548 .535 .006" material="shader: standard"></a-image>
-				<a-image id="image4" position="" visible="false" material="shader: standard"></a-image>
-				<a-image id="image5" position="" visible="false" material="shader: standard"></a-image>
-				
-				<!-- Video Titles -->
-				<a-text id="title1" color="black" font="kelsonsans" wrap-count="30" position="1.170 2.9 0" width="2"></a-text>
-				<a-text id="title2" color="black" font="kelsonsans" wrap-count="30" position="1.159 1.915 0" width="2"></a-text>
-				<a-text id="title3" color="black" font="kelsonsans" wrap-count="30" position="1.161 .830 0" width="2"></a-text>
-				<a-text id="title4" visible="false"></a-text>
-				<a-text id="title5" visible="false"></a-text>
-				
-				<!-- Video Descriptions -->
-				<a-text id="description1" color="black" font="kelsonsans" wrap-count="40" position="1.170 2.502 0" width="2"></a-text>
-				<a-text id="description2" color="black" font="kelsonsans" wrap-count="40" position="1.159 1.441 0" width="2"></a-text>
-				<a-text id="description3" color="black" font="kelsonsans" wrap-count="40" position="1.161 .384 0" width="2"></a-text>
-				<a-text id="description4" visible="false"></a-text>
-				<a-text id="description5" visible="false"></a-text>
-			</a-form>
-			</a-rounded>
-
-			<!-- Toast pop-up -->
-			<a-toast id="youtube-toast" duration="100000" autoshow="false" font="kelsonsans" message="Search for a video!" action="Got it"></a-toast>
-			
-			<!-- Video Player -->
-			<a-video></a-video>
-			</a-entity>
-			<!-- END YOUTUBE SECTION -->
-			
 			<!-- BEGIN FLICKR SECTION -->
-			<!-- Make keyboard and display an input box for youtube search query -->
-			<a-entity id="flickr-env" rotation="0 -90 0">
-			<a-keyboard id="flickr-keyboard" ></a-keyboard>
+			<!-- Make keyboard and display an input box for Flickr search query -->
+			<a-keyboard id="flickr-keyboard"></a-keyboard>
 			
 			<!-- When the user clicks the input box, the keyboard will be scaled and repositioned. Unable to do this with attribute tags for some reason -->
-			<a-input id="flickr-input" onClick="styleFlickrKeyboard()" position="-.65 1.235 -3.35" rotation="-21.4 0 0" placeholder="Input image search query" color="black" width="1" scale="2.163 2.163 2.163"></a-input>
+			<a-input id="flickr-input" onClick="styleFlickrKeyboard()" position="-0.76 1.453 -2.8" rotation="-21.4 0 0" placeholder="Input image search query" color="black" width="1" scale="2.163 2.163 2.163"></a-input>
 			
 			<!-- Image viewing interface -->
 			<a-entity id="interface-title-2" text="value:Flickr Image Search; color:#FF0084; shader: msdf; font:monoid;" scale="15 15 15" position="4.531 7.283 -3.42"></a-entity>
@@ -156,7 +106,7 @@
 			<!-- Note: Since only three videos are being shown, the last two of every attribute have visible="false" -->
 			<a-rounded id="flickr-interface" width="9.1" height="6.2" position="-3.49 1.567 -3.44" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
 			<a-form>
-				<a-button id="flickr-help-button" position=-1.56 -0.32 2.469" rotation="0 45 0" name="help" value="Need Help?" color="#FFFFFF"></a-button>
+				<a-button id="flickr-help-button" position="-1.56 -0.32 2.469" rotation="0 45 0" name="flickr" value="Need Help??" color="#FFFFFF"></a-button>
 				
 				<!-- Video Thumbnails -->
 				<a-image width="2" height="2" id="flickrimage1" position="1.066 5.099 0.010" material="shader: standard"></a-image>
@@ -175,18 +125,18 @@
 			</a-form>
 			</a-rounded>
 			
+			<!-- Toast pop-up -->
+			<a-toast id="flickr-toast" duration="2000" autoshow="false" font="kelsonsans" message="Search for an image!" action="Got it"></a-toast>
+			
 			<script>
 			 // Set default image for image containers
 			 for(var x = 1; x <= 12; x++){
 				var img_container = document.getElementById('flickrimage'+x);
-				img_container.setAttribute('src', 'https://i1.wp.com/wisteriaandrose.com/wp-content/uploads/2015/03/transparent-flickr-logo-icon-copy.png');
+				img_container.setAttribute('src', 'img/flicker-default.png');
 			 }
 			</script>
 			
-			<!-- Toast pop-up -->
-			<a-toast id="flickr-toast" duration="100000" autoshow="false" font="kelsonsans" message="Search for an image!" action="Got it"></a-toast>
-			</a-entity>
-			<!-- END FLICKR SECTOIN -->
+			<!-- END FLICKR SECTION -->
 			
 			<!-- Begin networking setup for RTC -->
 			<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls>
@@ -194,128 +144,7 @@
 			</a-entity>
 
 		</a-scene>
-
-		<!-- This script and all other utilities should be moved -->
-		<script>
-		console.log("Networking player model schema...");
-		// Player model schema
-		NAF.schemas.add({
-			template: '#avatar-template',
-			components: [
-			'position',
-			'rotation',
-			{
-				selector: '.head',
-				component: 'material',
-				property: 'color'
-			}
-			]
-		});
 		
-		// Called by Networked-Aframe when connected to server
-		function onConnect () {
-			console.log("onConnect", new Date());
-		}
-		</script>
-		
-		<!-- This script and all other utilities should be moved -->
-		<script type="text/javascript">
-		let youtube_toast = document.getElementById('youtube-toast');
-		let youtube_input_box = document.getElementById('youtube-input');
-		let youtube_keyboard = document.getElementById('youtube-keyboard');
-		let youtube_help_button = document.getElementById('youtube-help-button');
-		
-		/* BEGIN YOUTUBE UI/UX EVENT LISENTERS */
-		// Show toast pop-up when button is clicked, and close when the toast is clicked
-		youtube_toast.addEventListener('actionclick', ()=>{
-			youtube_toast.hide();
-		})
-		
-		// Show a help message after clicking the button
-        youtube_help_button.addEventListener('click', ()=> {
-			youtube_toast.setAttribute('scale', {x:1.5, y:1.5, z:1.5});
-			youtube_toast.setAttribute('position', {x:-1.49, y:.368, z:-1.6}); 
-			youtube_toast.show();
-        })
-		
-		// Track keyboard input
-		youtube_keyboard.addEventListener('input', (e)=>{
-			youtube_search_query += e.detail;
-			//console.log(youtube_search_query);
-		});
-
-		// When the user presses the enter key
-		youtube_keyboard.addEventListener('enter', (e)=>{
-			console.log("Enter key pressed!")
-		});
-		
-		// When the user presses backspace
-		youtube_keyboard.addEventListener('backspace', (e)=>{
-			youtube_input_box.value = youtube_input_box.value.substring(0, youtube_input_box.value.length - 1);
-			youtube_search_query = youtube_search_query.substring(0, youtube_search_query.length - 1);
-			console.log(youtube_input_box.value);
-			console.log(youtube_search_query);
-		});
-
-		// Listen for keyboard close
-		youtube_keyboard.addEventListener('dismiss', (e)=>{
-			console.log("Dismiss: ", e);
-			youtube_keyboard.dismiss();
-			make_youtube_query = true;
-			call_youtube_api(make_youtube_query); // Query YouTube's API
-			youtube_search_query = '' // Reset query for the next search
-		});
-		/* END YOUTUBE UI/UX EVENT LISENTERS */
-		
-		/* BEGIN FLICKR UI/UX EVENT LISENTERS */
-		let flickr_toast = document.getElementById('flickr-toast');
-		let flickr_input_box = document.getElementById('flickr-input');
-		let flickr_keyboard = document.getElementById('flickr-keyboard');
-		let flickr_help_button = document.getElementById('flickr-help-button');
-		
-		/* BEGIN YOUTUBE UI/UX EVENT LISENTERS */
-		// Show toast pop-up when button is clicked, and close when the toast is clicked
-		flickr_toast.addEventListener('actionclick', ()=>{
-			flickr_toast.hide();
-		})
-		
-		// Show a help message after clicking the button
-        flickr_help_button.addEventListener('click', ()=> {
-			flickr_toast.setAttribute('scale', {x:1.5, y:1.5, z:1.5});
-			flickr_toast.setAttribute('position', {x:-1.49, y:.368, z:-1.6}); 
-			flickr_toast.show();
-        })
-		
-		// Track keyboard input
-		flickr_keyboard.addEventListener('input', (e)=>{
-			flickr_search_query += e.detail;
-			//console.log(youtube_search_query);
-		});
-
-		// When the user presses the enter key
-		flickr_keyboard.addEventListener('enter', (e)=>{
-			console.log("Enter key pressed!")
-		});
-		
-		// When the user presses backspace
-		flickr_keyboard.addEventListener('backspace', (e)=>{
-			flickr_input_box.value = flickr_input_box.value.substring(0, flickr_input_box.value.length - 1);
-			flickr_search_query = flickr_search_query.substring(0, flickr_search_query.length - 1);
-			console.log(flickr_input_box.value);
-			console.log(flickr_search_query);
-		});
-
-		// Listen for keyboard close
-		flickr_keyboard.addEventListener('dismiss', (e)=>{
-			console.log("Dismiss: ", e);
-			flickr_keyboard.dismiss();
-			make_flickr_query = true;
-			call_flickr_api(make_flickr_query); // Query Flickr's API
-			flickr_search_query = '' // Reset query for the next search
-		});
-		
-		/* END FLICKR UI/UX EVENT LISENTERS */
-		</script>
-	
+		<script type="text/javascript" src="js/flickr-interactions.js"></script>
 	</body>
 </html>
