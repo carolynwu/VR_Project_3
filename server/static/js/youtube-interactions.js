@@ -40,9 +40,9 @@ youtube_keyboard.addEventListener('backspace', (e)=>{
 youtube_keyboard.addEventListener('dismiss', (e)=>{
 	console.log("Dismiss: ", e);
 	youtube_keyboard.dismiss();
-	make_youtube_query = true;
-	call_youtube_api(make_youtube_query); // Query YouTube's API
+	call_youtube_api(true); // Query YouTube's API
 	youtube_input_box.value = '';
 	youtube_search_query = ''; // Reset query for the next search
 });
+
 /* END YOUTUBE UI/UX EVENT LISENTERS */

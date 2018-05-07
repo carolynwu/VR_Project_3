@@ -32,9 +32,30 @@ flickr_keyboard.addEventListener('backspace', (e)=>{
 flickr_keyboard.addEventListener('dismiss', (e)=>{
 	console.log("Dismiss: ", e);
 	flickr_keyboard.dismiss();
-	make_flickr_query = true;
-	//call_flickr_api(make_flickr_query); // Query Flickr's API
+	call_flickr_api(true); // Query Flickr's API
 	flickr_search_query = ''; // Reset query for the next search
+	flickr_input_box.value = '';
 });
 
+function call_flickr_api(make_flickr_query){
+	var FLICKR_CONTAINER = ["flickrimage1", "flickrimage2", "flickrimage3", "flickrimage4", "flickrimage5", "flickrimage6", "flickrimage7", "flickrimage8", "flickrimage9", "flickrimage10", "flickrimage11", "flickrimage12"];
+	if(make_flickr_query){
+		var photo_tag = document.getElementById('flickr-input').value;
+		var apiKey = new FrameConfig().flickr_key;
+		var flickr = new Flickr(apiKey);
+		flickr.photos.search({
+			tags: photo_tag
+		}, function(response) {
+			var photos = response.photos.photo;
+			console.log(photos);
+			for(var x = 0; x <= 12; x++){
+				document.querySelector('#'+FLICKR_CONTAINER[x]).setAttribute('src', photos[x].src());
+			}
+		});
+	}
+	else{
+		console.log("Error, Flickr API call forbidden");
+	}
+
+}
 /* END FLICKR UI/UX EVENT LISENTERS */
