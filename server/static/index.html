@@ -4,98 +4,20 @@
 	<meta name="description" content="CS 4331-002 Special Topics in CS: Virtual Reality - Project 3">
 	<meta name="keywords" content="Virtual,Reality,Project">
 	<meta name="author" content="Xujia Wu and Simon Woldemichael">
-	
 	<title>CS 4331-002: Project 3 by Xujia Wu and Simon Woldemichael</title>
-	
-	<!-- aframe-materials keyboard has only been tested with A-Frame v0.6.1 -->
-	<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
-	<!--<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>-->
-	
-	<!-- Globals for simplicity -->
-	<script type="text/javascript">
-		AFRAME.ASSETS_PATH = "./assets";
-		
-		// Set up functions to provide redirection
-		function loadFlickr(){
-			window.open("./flickr.html", "_self");
-		}
-		function loadYoutube(){
-			window.open("./youtube.html", "_self");
-		}
-		function loadReddit(){
-			console.log('unimplemented');
-		}
-	</script>
-	
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script src="/easyrtc/easyrtc.js"></script>
-	<script src="https://unpkg.com/networked-aframe/dist/networked-aframe.min.js"></script>
-	<script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
-	
-	<script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
-	<script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
-	<script src="https://cdn.rawgit.com/etiennepinchon/aframe-material/master/dist/aframe-material.min.js"></script>
-	
-	<!-- Helper script to ensure that all new players that join the scene are spawned within the same place -->
-	<script src="/js/spawn-in-circle.component.js"></script>
-</head>
-	<body>
-		<!-- Begin A-Scene -->
-		<a-scene networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
-			<!-- Define assets -->
-			<a-assets>
-				<img id="grid" src="https://i.imgur.com/25P1geh.png" crossorigin="anonymous" />
-
-				<!-- Templates -->
-				<!-- Avatar. Must be HTML <template> tagged -->
-				<template id="avatar-template">
-					<a-entity class="avatar">
-						<a-sphere class="head" color="#ffffff" scale="0.45 0.5 0.4"></a-sphere>
-						<a-entity class="face" position="0 0.05 0">
-							<a-sphere class="eye" color="#efefef" position="0.16 0.1 -0.35" scale="0.12 0.12 0.12">
-								<a-sphere class="pupil" color="#000" position="0 0 -1" scale="0.2 0.2 0.2"></a-sphere>
-							</a-sphere>
-							<a-sphere class="eye" color="#efefef" position="-0.16 0.1 -0.35" scale="0.12 0.12 0.12">
-								<a-sphere class="pupil" color="#000" position="0 0 -1" scale="0.2 0.2 0.2"></a-sphere>
-							</a-sphere>
-						</a-entity>
-					</a-entity>
-				</template>
-				
-			</a-assets>
-			
-			<!-- Laser controls entity for WebVR compatible headsets? -->
-			<a-entity laser-controls="hand: right"></a-entity>
-			
-			<!-- Setup skybox gradient -->
-			<a-gradient-sky material="shader: gradient; topColor: 0 0 204; bottomColor: 0 153 255;"></a-gradient-sky>
-			
-			<!-- Ground plane -->
-			<a-entity position="0 0 0" geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6;"></a-entity>
-			
-			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking)-->
-			<a-camera raycaster="far: 150; objects: .intersectable" look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera>
-			
-			<!-- Image viewing interface -->
-			<a-entity id="interface-title-main" text="value:Social Media VR; color:#1C4571; shader: msdf; font: sourcecodepro;" scale="15 15 15" position="4.824 4.051 -1.42"></a-entity>
-			
-			<!-- BEGIN FORM -->
-			<a-entity rounded="width: 3; height: 3; radius: 0.2; topRightRadius: 0.4; bottomLeftRadius: 0.4; color: #18ffff; opacity: 0.4;" position="-1.39 .5 -2.5">
-			  <a-form>
-				<a-button onClick="loadYoutube()" position=".385 1 0" width="3" name="stuff" value="YouTube"></a-button>
-				<a-button onClick="loadFlickr()" position=".385 1.666 0" width="3" name="stuff" value="Flickr"></a-button>
-				<a-button onClick="loadReddit()" position=".385 2.333 0" width="3" name="stuff" value="Reddit"></a-button>
-			  </a-form>
-			</a-entity>
-
-			<!-- Begin networking setup for RTC -->
-			<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls mouse-cursor>
-				<a-sphere class="head" visible="false" random-color></a-sphere>
-			</a-entity>
-
-		</a-scene>
-		
-	</body>
+    
+	<link href="/css/styles.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="form">
+        <h2>Enter Room Name and Username</h2>
+        <form class="login-form" action="/hub.html" method="GET">
+          <input type="text" name="room" placeholder="room" required/>
+          <input type="text" name="username" placeholder="username" required/>
+          <button>Let's Go!</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
