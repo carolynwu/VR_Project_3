@@ -27,9 +27,11 @@
   - [A-Frame](https://aframe.io/) :a:
   - [Youtube API](https://developers.google.com/youtube/iframe_api_reference) :fast_forward:
   - [Twitter API](https://dev.twitter.com/web/javascript) :baby_chick:
-  - [Snowrap (Reddit API Wrapper)](https://github.com/not-an-aardvark/snoowrap) :snowman:
   - [Node.js](https://nodejs.org/en/) :checkered_flag: (used to serve the Web Real Time Connection environment)
   - [Material Design Lite](https://getmdl.io/) :milky_way:
+  - [Song 1](https://www.youtube.com/watch?v=96YCJaUFxaM)
+  - [Song 2](https://www.youtube.com/watch?v=6FhYXf9vp6w)
+  - [Song 3]()
 
 ### Contributors
   - [Xujia Wu](https://github.com/carolynwu)

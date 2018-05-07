@@ -33,7 +33,7 @@
 </head>
 	<body>
 		<!-- Begin A-Scene -->
-		<a-scene environment="preset: contact; lighting: point; lightPosition: 0 2 0; fog: 0; skyType: atmosphere; lightPosition: 0 .2 0;"  dynamic-room networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
+		<a-scene environment="preset: contact; lighting: point; lightPosition: 0 2 0; fog: 0; skyType: atmosphere; lightPosition: 0 .2 0; grid: crosses;"  dynamic-room networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
 			<!-- Define assets -->
 			<a-assets>
 				<!-- Images for warps -->
@@ -57,6 +57,9 @@
 					</a-entity>
 				</template>
 			</a-assets>
+			
+			<!-- Background Music -->
+			<a-entity position="0 0 0" sound="src: url(assets/sounds/AmbientSongS.wav); autoplay: true; loop: true"></a-entity>
 			
 			<!-- Laser controls entity for WebVR compatible headsets? -->
 			<a-entity laser-controls="hand: right"></a-entity>
