@@ -22,3 +22,22 @@ components: [
 function onConnect () {
 	console.log("onConnect", new Date());
 }
+
+// Function for back buttons
+function goBack() {
+   window.open("./hub.html?room=default", "_self");
+}
+
+// Select the video player and update the source to play the video
+function updateVideo(ix){ 
+	var video_name = 'video/'+ix+'.mkv';
+	var play_video = document.querySelector('#videoPlayer');
+	play_video.setAttribute('src', video_name);
+}
+
+// This actually just deletes the video player. There isn't a way to stop the video and stop the sound...
+function stopVideo(){
+	var video_player = document.querySelector('#videoPlayer');
+	var my_scene = document.querySelector('a-scene');
+	my_scene.remove(video_player);
+}

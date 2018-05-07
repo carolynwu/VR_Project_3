@@ -131,33 +131,13 @@
 			<!-- Video Player -->
 			<a-video class="intersectable" src="" onClick="stopVideo()" id="videoPlayer" width="6" height="3" rotation="0 -30.1 0" position="5.322 3.368 -5.03" scale="1.198 1.421 1"></a-video>
 			<a-entity position="5.484 .974 -5.10" rotation="-.74 60.96 -1.31" scale="3 3 3" id="tv-container" obj-model="obj: #tv-obj; mtl: #tv-mtl"></a-entity>
-			
-			<script>
-				// Select the video player and update the source to play the video
-				function updateVideo(ix){ 
-					var video_name = 'video/'+ix+'.mkv';
-					var play_video = document.querySelector('#videoPlayer');
-					play_video.setAttribute('src', video_name);
-				}
-				
-				function stopVideo(){
-					var video_player = document.querySelector('#videoPlayer');
-					var my_scene = document.querySelector('a-scene');
-					my_scene.remove(video_player);
-				}
-			</script>
-			
+
 			<!-- Toast pop-up -->
 			<a-toast id="youtube-toast" duration="2000" autoshow="false" font="kelsonsans" message="Search for a video!" action="Got it"></a-toast>
 			
 			<!-- Back Button -->
 			<a-button id="back-button" position="6.602 2.073 3.502" rotation="0 225 0" name="youtube" value="Back" color="#FFFFFF" onClick="goBack()"></a-button>
-
-			<script>
-				function goBack() {
-				   window.open("./hub.html?room=default", "_self");
-				}
-			</script>
+			
 			<!-- END YOUTUBE SECTION -->
 			
 			<!-- Begin networking setup for RTC -->
