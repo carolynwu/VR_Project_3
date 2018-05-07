@@ -57,6 +57,20 @@
   - The boilerplate practially set us up to run in circles, solving and causing problems until we decided to split all of the scenes up
   - [Deploying to Heroku apparently takes two hours](https://github.com/networked-aframe/networked-aframe/blob/master/docs/hosting-networked-aframe-on-a-server.md)
   
+### Limitations
+  1. See the first entry under `Biggest issues`
+  2. IMPORTANT: YouTube does not allow direct file access to their videos via their API. Because of this, we are unable to dynamically set videos. The logic is simple:
+  ```javascript
+  function updateVideo(ix){ 
+				console.log(ix);
+				var selected_source = document.getElementById('urlstore'+ix).getAttribute('value');
+				console.log(selected_source);
+				var play_video = document.querySelector('#videoPlayer'); 
+				play_video.setAttribute('material.src', selected_source);
+			}
+	```
+	Depending on what video the user selected in the interface, depends on what source url is loaded into the video player. But because the URL must be a direct link, and YouTube doesn't give it's API users access to direct links, we cannot update the video player to play videos. Please see [this](https://stackoverflow.com/questions/46010205/a-frame-playing-a-youtube-video-on-a-plane), [this](https://aframe.io/docs/0.6.0/introduction/faq.html#can-i-render-youtube-videos-as-a-texture) and [this](https://stackoverflow.com/questions/36298195/how-to-render-youtube-videos-as-a-texture-in-a-frame) (by a lead A-Frame developer) for more details.
+
 ### Planned timeline
   - A Trello Board is being used to track the progress and development of this project:
     - https://trello.com/b/GRBMbBuo/cs-4331-002-virtual-reality-project-3
@@ -65,6 +79,7 @@
   - [A-Frame Material Design Plugin](https://github.com/etiennepinchon/aframe-material)
   - [Networked A-Frame](https://github.com/networked-aframe/networked-aframe)
   - [A-Rounded components](https://github.com/etiennepinchon/aframe-rounded)
+  - [A-Environment component](https://github.com/feiss/aframe-environment-component)
   
 ### References
   - Please visit our [Trello Board](https://trello.com/b/GRBMbBuo/cs-4331-002-virtual-reality-project-3) to see references and sources
@@ -75,7 +90,6 @@
   
   - Images and references here
 
-  
 <h3 align="center">YouTube API Interface :fast_forward:</h3>
  
   - Images and references here	
