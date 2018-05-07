@@ -38,7 +38,7 @@ particlesJS("particle-container", {
       }
     },
     "size": {
-      "value": 6,
+      "value": 16,
       "random": true,
       "anim": {
         "enable": false,
@@ -73,11 +73,11 @@ particlesJS("particle-container", {
     "detect_on": "canvas",
     "events": {
       "onhover": {
-        "enable": false,
+        "enable": true,
         "mode": "repulse"
       },
       "onclick": {
-        "enable": false,
+        "enable": true,
         "mode": "push"
       },
       "resize": true
@@ -91,7 +91,7 @@ particlesJS("particle-container", {
       },
       "bubble": {
         "distance": 400,
-        "size": 40,
+        "size": 60,
         "duration": 2,
         "opacity": 8,
         "speed": 3
