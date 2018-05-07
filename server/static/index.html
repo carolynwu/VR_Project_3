@@ -14,20 +14,16 @@
 	<!-- Globals for simplicity -->
 	<script type="text/javascript">
 		AFRAME.ASSETS_PATH = "./assets";
-		var flickr_search_query = '';
-
-		// Update the keyboard's settings since it allows outline changes
-		function styleFlickrKeyboard(){
-			var key_styler = document.getElementById('flickr-keyboard');
-			key_styler.setAttribute('position', {x: -2.15, y: 0.015, z: -2.00});
-			key_styler.setAttribute('scale', {x: 3.519, y: 3.519, z: 3.519});
-		}
 		
-		// Show a help message after clicking the button
-		function onFlickrHelpButtonClick(){
-			var flickr_toast = document.getElementById('flickr-toast');
-			flickr_toast.setAttribute('scale', {x:1.5, y:1.5, z:1.5});
-			flickr_toast.show();
+		// Set up functions to provide redirection
+		function loadFlickr(){
+			window.open("./flickr.html", "_self");
+		}
+		function loadYoutube(){
+			window.open("./youtube.html", "_self");
+		}
+		function loadReddit(){
+			console.log('unimplemented');
 		}
 	</script>
 	
@@ -88,9 +84,9 @@
 			<!-- BEGIN FORM -->
 			<a-entity rounded="width: 3; height: 3; radius: 0.2; topRightRadius: 0.4; bottomLeftRadius: 0.4; color: #18ffff; opacity: 0.4;" position="-1.39 .5 -2.5">
 			  <a-form>
-				<a-button position=".385 1 0" width="3" name="stuff" value="YouTube"></a-button>
-				<a-button position=".385 1.666 0" width="3" name="stuff" value="Flickr"></a-button>
-				<a-button position=".385 2.333 0" width="3" name="stuff" value="Reddit"></a-button>
+				<a-button onClick="loadYoutube()" position=".385 1 0" width="3" name="stuff" value="YouTube"></a-button>
+				<a-button onClick="loadFlickr()" position=".385 1.666 0" width="3" name="stuff" value="Flickr"></a-button>
+				<a-button onClick="loadReddit()" position=".385 2.333 0" width="3" name="stuff" value="Reddit"></a-button>
 			  </a-form>
 			</a-entity>
 
