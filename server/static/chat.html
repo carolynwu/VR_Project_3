@@ -36,10 +36,11 @@
         var text_position = {x:.5, y:2.955, z:0};
         var message_id_number = 1;
 	</script>
+	
+	<script defer src="/js/project3.js"></script>
 
 </head>
 <body>
-
 <!-- Begin A-Scene -->
 <a-scene environment="preset:threetowers; grid: cross" networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
 	<!-- Define assets -->
@@ -49,14 +50,14 @@
 		<template id="avatar-template">
 			<a-entity class="avatar">
 				<a-torus class="head" color="#ffffff" scale="0.45 0.5 0.4"></a-torus>
-				<a-entity class="face" position="0 0.05 0"></a-entity>
+				<a-entity class="face" position="0 0.05 0">
 				<a-sphere class="eye" color="#efefef" position="0.16 0.1 -0.35" scale="0.12 0.12 0.12">
 					<a-sphere class="pupil" color="#000" position="0 0 -1" scale="0.2 0.2 0.2"></a-sphere>
 				</a-sphere>
 				<a-sphere class="eye" color="#efefef" position="-0.16 0.1 -0.35" scale="0.12 0.12 0.12">
 					<a-cone class="pupil" color="#000" position="0 0 -1" scale="0.2 0.2 0.2"></a-cone>
 				</a-sphere>
-				</a-torus>
+				</a-entity>
 			</a-entity>
 		</template>
 	</a-assets>
@@ -79,16 +80,18 @@
         }
 	</script>
 	<!-- When the user clicks the input box, the keyboard will be scaled and repositioned. Unable to do this with attribute tags for some reason -->
-	<a-input onClick="styleKeyboard()" position="-.65 1.069 -3.35" rotation="-21.4 0 0" placeholder="Start Talking..." color="black" width="1" scale="2.163 2.163 2.163"></a-input>
+	<a-input onClick="styleKeyboard()" position="-.65 1.193 -3.35" rotation="-21.4 0 0" placeholder="Start Talking..." color="black" width="1" scale="2.163 2.163 2.163"></a-input>
 	
 	<!-- Chat display form -->
-	<a-rounded color="black" position="-1.18 1.222 -3.44" width="4" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
-		<a-form id="chatbox">
-		</a-form>
+	<a-rounded color="#777777" position="-1.18 1.222 -3.44" width="4" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
+		<a-form id="chatbox"></a-form>
 	</a-rounded>
 
 	<!-- Toast pop-up -->
 	<a-toast message="This is a toast" action="Got it"></a-toast>
+	
+	<!-- Back Button -->
+	<a-button id="chat-back-button" position="3.930 2.073 -3.28" rotation="0 -45 0" name="chat-back" value="Back" color="#FFFFFF" onClick="goBack()"></a-button>
 	
 	<!-- Begin networking setup for RTC -->
 	<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls mouse-cursor>
