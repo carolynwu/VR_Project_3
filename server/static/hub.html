@@ -39,7 +39,7 @@
 				<!-- Images for warps -->
 				<img id="ytThumbnail" src="img/youtube_warp.png">
 				<img id="flickrThumbnail" src="img/flickr_warp.png">
-
+				<img id="chatThumbnail" src="img/chat_warp.png">
 				<!-- Templates -->
 				<!-- Avatar. Must be HTML <template> tagged -->
 				<template id="avatar-template">
@@ -65,21 +65,22 @@
 			<a-camera raycaster="far: 150; objects: .intersectable" look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera>
 			
 			<!-- Scene selection interface -->
-			<a-entity id="interface-title-main" text="value:Social Media VR; side: double; color:#FFFFFF; shader: msdf; font: sourcecodepro;" scale="15 15 15" position="4.824 3.860 -2.90">
-				 <a-animation dur="1000" fill="forwards" to="360 0 0" repeat="indefinite"></a-animation>
+			<a-entity id="interface-title-main" text="value:Social Media VR; side: double; color:#FFFFFF; shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/creepster/Creepster-Regular.json;" scale="15 15 15" position="6.772 3.906 3.790" rotation="0 -90 0">
+				 <a-animation dur="10000" attribute="position" easing="linear" to="6.772 3.906 9.021" fill="both" repeat="indefinite"></a-animation>
 			</a-entity>
 			
 			<!-- Help display -->
-			<a-rounded position="-5.42" rotation="0 45 0" width="3.6" color="#000000" opacity=".5" height="2.4" radius="1" topLeftRadius="-1" topRightRadius="-1" bottomLeftRadius="-1" bottomRightRadius="-1">
-				<a-text position=".152 1.353 0" wrap-count="60" side="double" color="#FFFFFF" font="sourcecodepro" scale="2 2 2" value="Select a button to\n be sent into the user\n interface for a\n particular service."></a-text>
+			<a-rounded position="5.749 0 -7.57" rotation="0 -45 0" width="3.6" color="#000000" opacity=".5" height="2.4" radius="1" topLeftRadius="-1" topRightRadius="-1" bottomLeftRadius="-1" bottomRightRadius="-1">
+				<a-text position=".152 1.353 0" wrap-count="60" side="double" color="#FFFFFF" font="sourcecodepro" scale="2 2 2" value="Select a portal to\n be sent into the A-Frame\n scene for a\n particular service."></a-text>
 			</a-rounded>
 			
 			<!-- BEGIN FORM -->
-			<a-entity rounded="width: 3; height: 3; radius: 0.2; topRightRadius: 0.4; bottomLeftRadius: 0.4; color: #18ffff; opacity: 0.4;" position="-1.39 .5 -2.5">
+			<a-entity position="6.880 1.072 -3.25"  rotation="0 -90 0" scale="3.436 1 1" rounded="width: 3; height: 3; radius: 0.2; topRightRadius: 0.4; bottomLeftRadius: 0.4; color: #18ffff; opacity: 0.4;"></a-entity>
+			<a-entity position="-1.39 .5 -2.5">
 			  <a-form>
-				<a-button buttonColor="#2979ff" onClick="loadYoutube()" position=".385 1 0" width="3" name="stuff" value="YouTube"></a-button>
-				<a-button buttonColor="#2979ff" onClick="loadFlickr()" position=".385 1.666 0" width="3" name="stuff" value="Flickr"></a-button>
-				<a-button buttonColor="#2979ff" onClick="loadChat()" position=".385 2.333 0" width="3" name="stuff" value="Chat"></a-button>
+				<a-button buttonColor="#2979ff" position="8.101 3.198 3.156" rotation="0 -90 0" width="3" name="stuff" value="YouTube"></a-button>
+				<a-button buttonColor="#2979ff" position="8.101 3.198 7.170" rotation="0 -90 0" width="3" name="stuff" value="Flickr"></a-button>
+				<a-button buttonColor="#2979ff" position="8.101 3.198 -0.39" rotation="0 -90 0"  width="3" name="stuff" value="Chat"></a-button>
 			  </a-form>
 			</a-entity>
 			
@@ -87,6 +88,7 @@
 			<a-entity id="warps" position="0 0 4.306">
 				<a-entity class="intersectable" position="6.760 2.284 -2.55" rotation="0 -90 0" link="title: Youtube; href: ./youtube.html; image: #ytThumbnail; highlightedColor: #ffffff; color: #4076fd;"></a-entity>
 				<a-entity class="intersectable" position="6.760 2.284 1.396" rotation="0 90 0" link="title: Flickr; href: ./flickr.html; image: #flickrThumbnail; highlightedColor: #ffffff; color: #4076fd;"></a-entity>
+				<a-entity class="intersectable" position="6.760 2.284 -6.35" rotation="0 -90 0" link="title: Chat; href: ./chat.html; image: #chatThumbnail; highlightedColor: #ffffff; color: #4076fd;"></a-entity>
 			</a-entity>
 			
 			<!-- Begin networking setup for RTC -->
@@ -94,7 +96,7 @@
 				<a-sphere class="head" visible="false" random-color></a-sphere>
 				<a-entity id="userName" class="nametag"></a-entity>
 			</a-entity>
-
+		
 		</a-scene>
 		<script>
 		console.log("Networking player model schema...");

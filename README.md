@@ -91,14 +91,26 @@ function updateVideo(ix){
   - [A-Rounded components](https://github.com/etiennepinchon/aframe-rounded)
   - [A-Environment component](https://github.com/feiss/aframe-environment-component)
   - [A-Room component](https://www.npmjs.com/package/aframe-room-component)
+  - [A-Frame fonts](https://github.com/etiennepinchon/aframe-fonts/tree/master/fonts)
+  - [TV Model (Google Poly)](https://poly.google.com/view/2flJebZTUrg)
 
 ### References
   - Please visit our [Trello Board](https://trello.com/b/GRBMbBuo/cs-4331-002-virtual-reality-project-3) to see references and sources
 
 <h2 align="center">Features</h2>
+<h3 align="center">Starting Scene</h3>
+
+  - After the user has selected a room and username, they will be loaded into the hub scene where they will be asked to select a portal to be transfered to another, much more interactive, scene.
+<p align="center">
+  <img width="90%" height="90%" src="https://imgur.com/IesuYy4.gif">
+</p>
+
 <h3 align="center">Multiuser Experience (current limited)</h3>
 
-  - Since we made use of the Networked-AFrame plugin, scenes can be used as rooms. Since we also use the dynamic-rooms component, separate rooms can be created on the server that can be joined. Currently, this is only supported on the first level, and a majority of the components need to be synced to the RTC environment.
+  - Since we made use of the Networked-AFrame plugin, scenes can be used as rooms. Since we also use the dynamic-rooms component, separate rooms can be created on the server that can be joined. Currently, this is only supported on the first level, and a majority of the components need to be synced to the RTC environment. Syncing components, custom or built-in is very tedious and didn't seem very efficient to do manually. (Notice in the screenshot below that the rotation of 2 players is not synced quickly enough, so it looks like the other player is facing the other way)
+<p align="center">
+  <img width="90%" height="90%" src="https://imgur.com/I6bliQd.gif">
+</p>
 <h3 align="center">Material Design Aesthetic :milky_way:</h3>
 
 <p align="center">
@@ -117,16 +129,26 @@ function updateVideo(ix){
  </ul>
 <h3 align="center">YouTube API Interface :fast_forward:</h3>
 <ul>
-  <li>In the YouTube scene of our project, users are able to search for videos through YouTube's API. The interface shows the 3 most relevant videos returned by the database. We provide an API key in the application, but to get your own API key go <a href="https://developers.google.com/youtube/v3/">here</a>.</li>
+  <li><mark>Notice: Since it is impossible to directlys stream videos from YouTube into A-Frame without proxying the videos using external frameworks, we are currently only playing 3 test videos that have been pre-downloaded from YouTube.</mark> In the YouTube scene of our project, users are able to search for videos through YouTube's API. The interface shows the 3 most relevant videos returned by the database. We provide an API key in the application, but to get your own API key go <a href="https://developers.google.com/youtube/v3/">here</a>.</li>
 </ul>
 <p align="center">
   <img width="90%" height="90%" src="https://i.imgur.com/Vpx2lvc.gif">
 </p>
 
+<h3 align="center">Chat board (early alpha) :iphone:</h3>
+
+  - In this scene, the user can type and send messages to a board within the scene. This scene was mostly just to see if we could send asynchronous messages through the server, but once again setting up scynced components turned out to be much more complicated than we expected.
+
+<p align="center">
+  <img width="90%" height="90%" src="https://i.imgur.com/W7VzYHj.gif">
+</p>
 <h3 align="center">Flickr API Interface :baby_chick:</h3>
 <ul>
- <li>In the Flickr scene, users are able to search for images through Flickr's API. The interface returns 12 images related tot he tag that the user types using the keyboard in the scene. We provide an API key in the application, but to get your own API key (Yahoo account require) go [here](https://www.flickr.com/services/api/misc.api_keys.html).</li>
+ <li>In the Flickr scene, users are able to search for images through Flickr's API. The interface returns 12 images related tot he tag that the user types using the keyboard in the scene. We provide an API key in the application, but to get your own API key (Yahoo account require) go <a href="https://www.flickr.com/services/api/misc.api_keys.html">here</a>.</li>
 </ul>
+<p align="center">
+  <img width="90%" height="90%" src="https://imgur.com/JWRSvbk.gif">
+</p>
 
 <h2 align="center">Concepts Worth Noting :book:</h2>
 
