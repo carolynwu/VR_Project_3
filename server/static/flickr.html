@@ -11,27 +11,6 @@
 	<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
 	<!--<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>-->
 	
-	<!-- Globals for simplicity -->
-	<script type="text/javascript">
-		AFRAME.ASSETS_PATH = "./assets";
-		var flickr_search_query = '';
-
-		// Update the keyboard's settings since it allows outline changes
-		function styleFlickrKeyboard(){
-			var key_styler = document.getElementById('flickr-keyboard');
-			key_styler.setAttribute('position', {x: -2.15, y: 0.015, z: -2.00});
-			key_styler.setAttribute('scale', {x: 3.519, y: 3.519, z: 3.519});
-		}
-		
-		// Show a help message after clicking the button
-		function onFlickrHelpButtonClick(){
-			var flickr_toast = document.getElementById('flickr-toast');
-			flickr_toast.setAttribute('scale', {x:1.5, y:1.5, z:1.5});
-			flickr_toast.show();
-		}
-	</script>
-	
-	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="/easyrtc/easyrtc.js"></script>
@@ -50,8 +29,9 @@
 	
 	<!-- Dependencies for Flickr -->
 	<script src="api/flickr.js"></script>
-	
 	<script defer src="js/flickr-interactions.js"></script>
+	<script defer src="js/project3.js"></script>
+	
 </head>
 	<body>
 		<!-- Begin A-Scene -->
@@ -118,14 +98,6 @@
 
 			<!-- Toast pop-up -->
 			<a-toast id="flickr-toast" duration="2000" autoshow="false" font="kelsonsans" message="Search for an image!" action="Got it"></a-toast>
-			
-			<script>
-			 // Set default image for image containers
-			 for(var x = 1; x <= 12; x++){
-				var img_container = document.getElementById('flickrimage'+x);
-				img_container.setAttribute('src', 'img/flicker-default.png');
-			 }
-			</script>
 			<!-- END FLICKR SECTION -->
 			
 			<!-- Begin networking setup for RTC -->

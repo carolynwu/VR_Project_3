@@ -30,6 +30,7 @@ function goBack() {
 
 AFRAME.ASSETS_PATH = "./assets";
 var youtube_search_query = '';
+var flickr_search_query = '';
 
 // Update the keyboard's settings since it allows outline changes
 function styleYoutubeKeyboard(){
@@ -51,4 +52,25 @@ function stopVideo(){
 	var video_player = document.querySelector('#videoPlayer');
 	var my_scene = document.querySelector('a-scene');
 	my_scene.remove(video_player);
+}
+
+
+// Update the keyboard's settings since it allows outline changes
+function styleFlickrKeyboard(){
+	var key_styler = document.getElementById('flickr-keyboard');
+	key_styler.setAttribute('position', {x: -2.15, y: 0.015, z: -2.00});
+	key_styler.setAttribute('scale', {x: 3.519, y: 3.519, z: 3.519});
+}
+
+// Show a help message after clicking the button
+function onFlickrHelpButtonClick(){
+	var flickr_toast = document.getElementById('flickr-toast');
+	flickr_toast.setAttribute('scale', {x:1.5, y:1.5, z:1.5});
+	flickr_toast.show();
+}
+
+// Set default image for image containers
+for(var x = 1; x <= 12; x++){
+	var img_container = document.getElementById('flickrimage'+x);
+	img_container.setAttribute('src', 'img/flicker-default.png');
 }
