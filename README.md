@@ -60,16 +60,16 @@
 ### Limitations
   1. See the first entry under `Biggest issues`
   2. IMPORTANT: YouTube does not allow direct file access to their videos via their API. Because of this, we are unable to dynamically set videos. The logic is simple:
-  ```javascript
-  function updateVideo(ix){ 
-				console.log(ix);
-				var selected_source = document.getElementById('urlstore'+ix).getAttribute('value');
-				console.log(selected_source);
-				var play_video = document.querySelector('#videoPlayer'); 
-				play_video.setAttribute('material.src', selected_source);
-			}
-	```
-	Depending on what video the user selected in the interface, depends on what source url is loaded into the video player. But because the URL must be a direct link, and YouTube doesn't give it's API users access to direct links, we cannot update the video player to play videos. Please see [this](https://stackoverflow.com/questions/46010205/a-frame-playing-a-youtube-video-on-a-plane), [this](https://aframe.io/docs/0.6.0/introduction/faq.html#can-i-render-youtube-videos-as-a-texture) and [this](https://stackoverflow.com/questions/36298195/how-to-render-youtube-videos-as-a-texture-in-a-frame) (by a lead A-Frame developer) for more details.
+
+```javascript
+function updateVideo(ix){ 
+	var selected_source = document.getElementById('urlstore'+ix).getAttribute('value');
+	var play_video = document.querySelector('#videoPlayer'); 
+	play_video.setAttribute('material.src', selected_source);
+}
+```
+
+  - Depending on what video the user selected in the interface, depends on what source url is loaded into the video player. But because the URL must be a direct link, and YouTube doesn't give it's API users access to direct links, we cannot update the video player to play videos. Please see [this](https://stackoverflow.com/questions/46010205/a-frame-playing-a-youtube-video-on-a-plane), [this](https://aframe.io/docs/0.6.0/introduction/faq.html#can-i-render-youtube-videos-as-a-texture) and [this](https://stackoverflow.com/questions/36298195/how-to-render-youtube-videos-as-a-texture-in-a-frame) (by a lead A-Frame developer) for more details.
 
 ### Planned timeline
   - A Trello Board is being used to track the progress and development of this project:
