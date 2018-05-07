@@ -11,7 +11,9 @@
 
 ***
 
-### Try it here: https://socialvr.herokuapp.com
+<h3 align="center">
+	Try it here: https://socialvr.herokuapp.com
+</h3>
 
 <p align="center">
   <img width="30%" height="30%" src="https://www.drupal.org/files/project-images/download_6.png">
@@ -77,7 +79,6 @@
   - Rendering text to the scene is computationally expensive enough, rendering videos is nearly impossible
   - Attempting to `<i-frame></i-frame>` a YouTube embed instead of sourcing it with <a-video></a-video> is impossible by the limitations of the library
   - The boilerplate practically set us up to run in circles, solving and causing problems until we decided to split all of the scenes up
-  - [Deploying to Heroku apparently takes two hours](https://github.com/networked-aframe/networked-aframe/blob/master/docs/hosting-networked-aframe-on-a-server.md)
 
 ### Limitations
   1. See the first entry under `Biggest issues`
