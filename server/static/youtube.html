@@ -11,21 +11,6 @@
 	<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
 	<!--<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>-->
 	
-	<!-- Globals for simplicity -->
-	<script type="text/javascript">
-		AFRAME.ASSETS_PATH = "./assets";
-		var youtube_search_query = '';
-
-	// Update the keyboard's settings since it allows outline changes
-	function styleYoutubeKeyboard(){
-		var key_styler = document.getElementById('youtube-keyboard');
-		key_styler.setAttribute('scale', {x: 3.519, y: 3.519, z: 3.519});
-		key_styler.setAttribute('rotation', {x: 0, y: -90, z: 0});
-		key_styler.setAttribute('position', {x: 5.180, y: 0.015, z: -2.42});
-	}
-	</script>
-	
-	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="/easyrtc/easyrtc.js"></script>
@@ -35,8 +20,6 @@
 	<script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
 	<script src="https://cdn.rawgit.com/etiennepinchon/aframe-material/master/dist/aframe-material.min.js"></script>
 	<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
-	
-	<!-- <script src="https://unpkg.com/aframe-video-illumination-component/dist/aframe-video-illumination-component.min.js"></script> -->
 	
 	<!-- Helper script to ensure that all new players that join the scene are spawned within the same place -->
 	<script src="/js/spawn-in-circle.component.js"></script>

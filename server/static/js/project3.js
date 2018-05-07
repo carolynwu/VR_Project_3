@@ -28,6 +28,17 @@ function goBack() {
    window.open("./hub.html?room=default", "_self");
 }
 
+AFRAME.ASSETS_PATH = "./assets";
+var youtube_search_query = '';
+
+// Update the keyboard's settings since it allows outline changes
+function styleYoutubeKeyboard(){
+	var key_styler = document.getElementById('youtube-keyboard');
+	key_styler.setAttribute('scale', {x: 3.519, y: 3.519, z: 3.519});
+	key_styler.setAttribute('rotation', {x: 0, y: -90, z: 0});
+	key_styler.setAttribute('position', {x: 5.180, y: 0.015, z: -2.42});
+}
+
 // Select the video player and update the source to play the video
 function updateVideo(ix){ 
 	var video_name = 'video/'+ix+'.mkv';
