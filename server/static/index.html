@@ -14,15 +14,21 @@
 	<!-- Globals for simplicity -->
 	<script type="text/javascript">
 		AFRAME.ASSETS_PATH = "./assets";
-		var youtube_search_query = '';
+		var flickr_search_query = '';
 
-	// Update the keyboard's settings since it allows outline changes
-	function styleYoutubeKeyboard(){
-		var key_styler = document.getElementById('youtube-keyboard');
-		key_styler.setAttribute('scale', {x: 3.519, y: 3.519, z: 3.519});
-		key_styler.setAttribute('rotation', {x: 0, y: -90, z: 0});
-		key_styler.setAttribute('position', {x: 5.180, y: 0.015, z: -2.42});
-	}
+		// Update the keyboard's settings since it allows outline changes
+		function styleFlickrKeyboard(){
+			var key_styler = document.getElementById('flickr-keyboard');
+			key_styler.setAttribute('position', {x: -2.15, y: 0.015, z: -2.00});
+			key_styler.setAttribute('scale', {x: 3.519, y: 3.519, z: 3.519});
+		}
+		
+		// Show a help message after clicking the button
+		function onFlickrHelpButtonClick(){
+			var flickr_toast = document.getElementById('flickr-toast');
+			flickr_toast.setAttribute('scale', {x:1.5, y:1.5, z:1.5});
+			flickr_toast.show();
+		}
 	</script>
 	
 	
@@ -36,24 +42,12 @@
 	<script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
 	<script src="https://cdn.rawgit.com/etiennepinchon/aframe-material/master/dist/aframe-material.min.js"></script>
 	
-	<!-- <script src="https://unpkg.com/aframe-video-illumination-component/dist/aframe-video-illumination-component.min.js"></script> -->
-	
 	<!-- Helper script to ensure that all new players that join the scene are spawned within the same place -->
 	<script src="/js/spawn-in-circle.component.js"></script>
-
-	<!-- Config -->
-	<script src="api/config.js"></script>
-	
-	<!-- Depenendices for YouTube -->
-	<script defer src="api/youtube.js"></script>
-	<script defer src="https://apis.google.com/js/client.js"></script>
-	
-	<script defer type="text/javascript" src="js/project3.js"></script>
-	<script defer type="text/javascript" src="js/youtube-interactions.js"></script>
 </head>
 	<body>
 		<!-- Begin A-Scene -->
-		<a-scene cursor="rayOrigin: mouse" networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
+		<a-scene networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
 			<!-- Define assets -->
 			<a-assets>
 				<img id="grid" src="https://i.imgur.com/25P1geh.png" crossorigin="anonymous" />
@@ -86,52 +80,20 @@
 			<a-entity position="0 0 0" geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6;"></a-entity>
 			
 			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking)-->
-			<a-camera raycaster="far: 150; objects: .intersectable" look-controls wasd-controls></a-camera>
+			<a-camera raycaster="far: 150; objects: .intersectable" look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera>
 			
-			<!-- BEGIN YOUTUBE SECTION -->
-			<!-- Make keyboard and display an input box for youtube search query -->
-			<a-entity keyboard="" physical-keyboard="true" id="youtube-keyboard"></a-entity>
+			<!-- Image viewing interface -->
+			<a-entity id="interface-title-main" text="value:Social Media VR; color:#1C4571; shader: msdf; font: sourcecodepro;" scale="15 15 15" position="4.824 4.051 -1.42"></a-entity>
 			
-			<!-- When the user clicks the input box, the keyboard will be scaled and repositioned. Unable to do this with attribute tags for some reason -->
-			<a-input id="youtube-input" onClick="styleYoutubeKeyboard()" position="6.862 1.235 -0.96" rotation="-21.4 -90 0" placeholder="Input video search query" color="black" width="1" scale="2.163 2.163 2.163"></a-input>
-			
-			<!-- Video selection interface -->
-			<a-entity id="interface-title-1" text="value:YouTube Video Search; color:#E52D27; shader: msdf; font:mozillavr;" scale="15 15 15" position="7.553 4.990 4.276" rotation="0 -90 0"></a-entity>
-			
-			<!-- Note: Since only three videos are being shown, the last two of every attribute have visible="false" -->
-			<a-rounded id="youtube-interface" position="7.520 1.684 -1.31" width="4" height="3.1" radius="0.05" rotation="0 -90 0" color="#F0F0F0" scale="0.816 0.816 0.816" >
-			<a-form>
-				<a-button id="youtube-help-button" position=-1.56 -0.32 2.469" rotation="0 45 0" name="youtube" value="Need Help?" color="#FFFFFF"></a-button>
-				
-				<!-- Video Thumbnails -->
-				<a-image id="image1" position=".559 2.573 .010" material="shader: standard"></a-image>
-				<a-image id="image2" position=".552 1.546 .008" material="shader: standard"></a-image>
-				<a-image id="image3" position=".548 .535 .006" material="shader: standard"></a-image>
-				<a-image id="image4" position="" visible="false" material="shader: standard"></a-image>
-				<a-image id="image5" position="" visible="false" material="shader: standard"></a-image>
-				
-				<!-- Video Titles -->
-				<a-text id="title1" color="black" font="kelsonsans" wrap-count="30" position="1.170 2.9 0" width="2"></a-text>
-				<a-text id="title2" color="black" font="kelsonsans" wrap-count="30" position="1.159 1.915 0" width="2"></a-text>
-				<a-text id="title3" color="black" font="kelsonsans" wrap-count="30" position="1.161 .830 0" width="2"></a-text>
-				<a-text id="title4" visible="false"></a-text>
-				<a-text id="title5" visible="false"></a-text>
-				
-				<!-- Video Descriptions -->
-				<a-text id="description1" color="black" font="kelsonsans" wrap-count="40" position="1.170 2.502 0" width="2"></a-text>
-				<a-text id="description2" color="black" font="kelsonsans" wrap-count="40" position="1.159 1.441 0" width="2"></a-text>
-				<a-text id="description3" color="black" font="kelsonsans" wrap-count="40" position="1.161 .384 0" width="2"></a-text>
-				<a-text id="description4" visible="false"></a-text>
-				<a-text id="description5" visible="false"></a-text>
-			</a-form>
-			</a-rounded>
+			<!-- BEGIN FORM -->
+			<a-entity rounded="width: 3; height: 3; radius: 0.2; topRightRadius: 0.4; bottomLeftRadius: 0.4; color: #18ffff; opacity: 0.4;" position="-1.39 .5 -2.5">
+			  <a-form>
+				<a-button position=".385 1 0" width="3" name="stuff" value="YouTube"></a-button>
+				<a-button position=".385 1.666 0" width="3" name="stuff" value="Flickr"></a-button>
+				<a-button position=".385 2.333 0" width="3" name="stuff" value="Reddit"></a-button>
+			  </a-form>
+			</a-entity>
 
-			<!-- Toast pop-up -->
-			<a-toast id="youtube-toast" duration="2000" autoshow="false" font="kelsonsans" message="Search for a video!" action="Got it"></a-toast>
-			
-			<!-- Video Player <a-video></a-video>-->
-			<!-- END YOUTUBE SECTION -->
-			
 			<!-- Begin networking setup for RTC -->
 			<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls mouse-cursor>
 				<a-sphere class="head" visible="false" random-color></a-sphere>
