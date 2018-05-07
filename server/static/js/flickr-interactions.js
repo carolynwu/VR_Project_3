@@ -7,15 +7,16 @@ var flickr_help_button = document.getElementById('flickr-help-button');
 function flickrTrigger(e){
 	console.log("Dismiss: ", e);
 	flickr_keyboard.dismiss();
+	call_flickr_api(true); // Query Flickr's API
 	flickr_search_query = ''; // Reset query for the next search
 	flickr_input_box.value = '';
-	call_flickr_api(true); // Query Flickr's API
 }
 
 function call_flickr_api(make_flickr_query){
 	var FLICKR_CONTAINER = ["flickrimage1", "flickrimage2", "flickrimage3", "flickrimage4", "flickrimage5", "flickrimage6", "flickrimage7", "flickrimage8", "flickrimage9", "flickrimage10", "flickrimage11", "flickrimage12"];
 	if(make_flickr_query){
 		var photo_tag = document.getElementById('flickr-input').value;
+		console.log(photo_tag);
 		var apiKey = new FrameConfig().flickr_key;
 		var flickr = new Flickr(apiKey);
 		flickr.photos.search({
