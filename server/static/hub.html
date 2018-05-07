@@ -27,7 +27,6 @@
 		}
 	</script>
 	
-	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="/easyrtc/easyrtc.js"></script>
@@ -35,8 +34,8 @@
 	<script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
 	
 	<script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
-	<script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
 	<script src="https://cdn.rawgit.com/etiennepinchon/aframe-material/master/dist/aframe-material.min.js"></script>
+	<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
 	
 	<!-- Helper script to ensure that all new players that join the scene are spawned within the same place -->
 	<script src="/js/spawn-in-circle.component.js"></script>
@@ -47,10 +46,9 @@
 </head>
 	<body>
 		<!-- Begin A-Scene -->
-		<a-scene dynamic-room networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
+		<a-scene environment="preset: contact; lighting: point; lightPosition: 0 2 0; fog: 0; skyType: atmosphere; lightPosition: 0 .2 0;"  dynamic-room networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
 			<!-- Define assets -->
 			<a-assets>
-				<img id="grid" src="https://i.imgur.com/25P1geh.png" crossorigin="anonymous" />
 
 				<!-- Templates -->
 				<!-- Avatar. Must be HTML <template> tagged -->
@@ -73,31 +71,25 @@
 			<!-- Laser controls entity for WebVR compatible headsets? -->
 			<a-entity laser-controls="hand: right"></a-entity>
 			
-			<!-- Setup skybox gradient -->
-			<a-gradient-sky material="shader: gradient; topColor: 0 0 204; bottomColor: 0 153 255;"></a-gradient-sky>
-			
-			<!-- Ground plane -->
-			<a-entity position="0 0 0" geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6;"></a-entity>
-			
 			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking)-->
 			<a-camera raycaster="far: 150; objects: .intersectable" look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera>
 			
 			<!-- Scene selection interface -->
-			<a-entity id="interface-title-main" text="value:Social Media VR; side: double; color:#FFFFFF; shader: msdf; font: sourcecodepro;" scale="15 15 15" position="4.824 4.051 -1.42">
+			<a-entity id="interface-title-main" text="value:Social Media VR; side: double; color:#FFFFFF; shader: msdf; font: sourcecodepro;" scale="15 15 15" position="4.824 3.860 -2.90">
 				 <a-animation dur="1000" fill="forwards" to="360 0 0" repeat="indefinite"></a-animation>
 			</a-entity>
 			
 			<!-- Help display -->
-			<a-rounded position="-6.44 0 -3.87" rotation="0 28.13 0" width="3.6" color="#000000" opacity=".5" height="2.4" radius="1" topLeftRadius="-1" topRightRadius="-1" bottomLeftRadius="-1" bottomRightRadius="-1">
+			<a-rounded position="-5.42" rotation="0 45 0" width="3.6" color="#000000" opacity=".5" height="2.4" radius="1" topLeftRadius="-1" topRightRadius="-1" bottomLeftRadius="-1" bottomRightRadius="-1">
 				<a-text position=".152 1.353 0" wrap-count="60" side="double" color="#FFFFFF" font="sourcecodepro" scale="2 2 2" value="Select a button to\n be sent into the user\n interface for a\n particular service."></a-text>
 			</a-rounded>
 			
 			<!-- BEGIN FORM -->
 			<a-entity rounded="width: 3; height: 3; radius: 0.2; topRightRadius: 0.4; bottomLeftRadius: 0.4; color: #18ffff; opacity: 0.4;" position="-1.39 .5 -2.5">
 			  <a-form>
-				<a-button onClick="loadYoutube()" position=".385 1 0" width="3" name="stuff" value="YouTube"></a-button>
-				<a-button onClick="loadFlickr()" position=".385 1.666 0" width="3" name="stuff" value="Flickr"></a-button>
-				<a-button onClick="loadReddit()" position=".385 2.333 0" width="3" name="stuff" value="Reddit"></a-button>
+				<a-button buttonColor="#2979ff" onClick="loadYoutube()" position=".385 1 0" width="3" name="stuff" value="YouTube"></a-button>
+				<a-button buttonColor="#2979ff" onClick="loadFlickr()" position=".385 1.666 0" width="3" name="stuff" value="Flickr"></a-button>
+				<a-button buttonColor="#2979ff" onClick="loadReddit()" position=".385 2.333 0" width="3" name="stuff" value="Reddit"></a-button>
 			  </a-form>
 			</a-entity>
 
