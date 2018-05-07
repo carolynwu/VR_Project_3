@@ -20,7 +20,36 @@
 	<!-- Particle.js -->
 	<div id="particle-container"></div>
 	<script src="/js/particleConfig.js"></script>
-		
+	
+	<!-- Header -->
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header" style="background-color: #2979ff">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Social Media VR! by Xujia Wu and Simon Woldemichael</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation">
+            <a style="line-height: 1cm;" class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" href="https://www.github.com/carolynwu/VR_Project_3">Project GitHub Repository</a>
+            <a style="line-height: 1cm;" class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" href="https://www.github.com/carolynwu/">Carolyn's GitHub</a>
+            <a style="line-height: 1cm;" class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" href="https://www.github.com/swoldemi/">Simon's GitHub</a>
+            <a style="line-height: 1cm;" class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" href="https://aframe.io/">Get A-Frame!</a>
+          </nav>
+        </div>
+      </header>
+	<!-- Side layout drawer -->  
+	<div class="mdl-layout__drawer ">
+        <span class="mdl-layout-title">Social Media VR!</span>
+        <nav class="mdl-navigation">
+			<a style="line-height: 10px;" class="mdl-js-ripple-effect mdl-navigation__link" href="https://www.github.com/carolynwu/VR_Project_3">Project GitHub Repository</a>
+			<a style="line-height: 10px;" class="mdl-js-ripple-effect mdl-navigation__link" href="https://www.github.com/carolynwu/">Carolyn's GitHub</a>
+			<a style="line-height: 10px;" class="mdl-js-ripple-effect mdl-navigation__link" href="https://www.github.com/swoldemi/">Simon's GitHub</a>
+			<a style="line-height: 10px;" class="mdl-js-ripple-effect mdl-navigation__link" href="https://aframe.io/">Get A-Frame!</a>
+        </nav>
+	</div>
+	  
+	<!-- Login-page form-->
     <div class="login-page">
       <div class="form">
         <h2>Enter Room Name and Username</h2>
@@ -32,6 +61,7 @@
       </div>
     </div>
 	
+	
 	<footer class="mdl-mini-footer">
 		<div class="mdl-mini-footer__left-section">
 			<div class="mdl-logo">CS 4331-002: Project 3 by Xujia Wu and Simon Woldemichael</div>
@@ -40,6 +70,6 @@
 			</ul>
 		</div>
 	</footer>
-	
+	</div>
   </body>
 </html>
