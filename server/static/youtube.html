@@ -56,7 +56,9 @@
 		<a-scene environment="preset: tron" cursor="rayOrigin: mouse;" networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
 			<!-- Define assets -->
 			<a-assets>
-
+				<a-asset-item id="tv-obj" src="assets/models/tv/model.obj"></a-asset-item>
+				<a-asset-item id="tv-mtl" src="assets/models/tv/materials.mtl"></a-asset-item>
+				
 				<!-- Templates -->
 				<!-- Avatar. Must be HTML <template> tagged -->
 				<template id="avatar-template">
@@ -123,19 +125,16 @@
 				<a-text id="urlstore3" visible="false"></a-text>
 				<a-text id="urlstore4" visible="false"></a-text>
 				<a-text id="urlstore5" visible="false"></a-text>
-				
 			</a-form>
 			</a-rounded>
 			
 			<!-- Video Player -->
-			<a-video class="intersectable" src="" onClick="stopVideo()" id="videoPlayer" width="6" height="3" rotation="0 -26.9 0" position="5.371 2.577 -4.94"></a-video>
+			<a-video class="intersectable" src="" onClick="stopVideo()" id="videoPlayer" width="6" height="3" rotation="0 -30.1 0" position="5.322 3.368 -5.03" scale="1.198 1.421 1"></a-video>
+			<a-entity position="5.484 .974 -5.10" rotation="-.74 60.96 -1.31" scale="3 3 3" id="tv-container" obj-model="obj: #tv-obj; mtl: #tv-mtl"></a-entity>
 			
 			<script>
 				// Select the video player and update the source to play the video
 				function updateVideo(ix){ 
-					console.log(ix);
-					// var selected_source = document.getElementById('urlstore'+ix).getAttribute('value');
-					// console.log(selected_source);
 					var video_name = 'video/'+ix+'.mkv';
 					var play_video = document.querySelector('#videoPlayer');
 					play_video.setAttribute('src', video_name);
@@ -150,7 +149,6 @@
 			
 			<!-- Toast pop-up -->
 			<a-toast id="youtube-toast" duration="2000" autoshow="false" font="kelsonsans" message="Search for a video!" action="Got it"></a-toast>
-			
 			<!-- END YOUTUBE SECTION -->
 			
 			<!-- Begin networking setup for RTC -->
