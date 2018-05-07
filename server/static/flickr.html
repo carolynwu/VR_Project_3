@@ -58,7 +58,6 @@
 		<a-scene fog="color: #999999; density: .030; far: 10; near: 1; type: exponential;" environment="preset: japan; skyType: atmosphere; ground: hills; groundColor: #FF0084; groundColor2: #1d75ce; dressingAmount: 4" networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
 			<!-- Define assets -->
 			<a-assets>
-				<img id="grid" src="https://i.imgur.com/25P1geh.png" crossorigin="anonymous" />
 
 				<!-- Templates -->
 				<!-- Avatar. Must be HTML <template> tagged -->
@@ -80,12 +79,6 @@
 			
 			<!-- Laser controls entity for WebVR compatible headsets? -->
 			<a-entity laser-controls="hand: right"></a-entity>
-			
-			<!-- Setup skybox gradient -->
-			<a-gradient-sky material="shader: gradient; topColor: 0 0 204; bottomColor: 0 153 255;"></a-gradient-sky>
-			
-			<!-- Ground plane -->
-			<a-entity position="0 0 0" geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6;"></a-entity>
 			
 			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking)-->
 			<a-camera raycaster="far: 150; objects: .intersectable" look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera>
