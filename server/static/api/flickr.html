@@ -9,13 +9,15 @@
   </head>
 <body>
   <script>
+    var photo_tag = 'house';
     var apiKey = new FrameConfig().flickr_key;
     var flickr = new Flickr(apiKey);
     flickr.photos.search({
-        tags: 'dog'
+        tags: photo_tag
     }, function(response) {
         var first = response.photos.photo[0];
-        var src = first.src('b'); // 'b' is an image size (1024 on longest side)
+        console.log(first.src());
+        var src = first.src(); // 'b' is an image size (1024 on longest side)
         var href = first.href();
         $('body').append('<a href="' + href + '"><img src="' + src + '"></a>');
     });
