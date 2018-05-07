@@ -11,6 +11,8 @@
 
 ***
 
+### Try it here: https://socialvr.herokuapp.com
+
 <p align="center">
   <img width="30%" height="30%" src="https://www.drupal.org/files/project-images/download_6.png">
 </p>
@@ -18,6 +20,7 @@
 <p align="center">
   <h3>Report</h3>
 </p>
+
 
 - For Project 3 of this course, we proposed that we utilize A-Frame for WebGL based Virtual Reality and AR.js for WebGL based Augmented Reality to provide users with a multiplayer social interaction environment. This multiuser environment would allow users to access and experience data (i.e videos, photos and webpages) with other users at the same time. The AR aspect of our application would be more of a supplement to the online Web Application. Augmented Reality markers generated with AR.js would contain supplementary data (bookmarks/links) for users of our web application. We believed this could be achieved by making API calls using JavaScript. We would mainly like our program to function on mobile devices (i.e. Android, iPhone, Windows Phone). Our team consists of two members; Simon Woldemichael and Xujia Wu. Links to potential libraries and free API's to be used are linked below.
 
