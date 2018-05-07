@@ -11,13 +11,15 @@
 
 - For Project 3 of this course, we proposed that we utilize A-Frame for WebGL based Virtual Reality and AR.js for WebGL based Augmented Reality to provide users with a multiplayer social interaction environment. This multiuser environment would allow users to access and experience data (i.e videos, photos and webpages) with other users at the same time. The AR aspect of our application would be more of a supplement to the online Web Application. Augmented Reality markers generated with AR.js would contain supplementary data (bookmarks/links) for users of our web application. We believed this could be achieved by making API calls using JavaScript. We would mainly like our program to function on mobile devices (i.e. Android, iPhone, Windows Phone). Our team consists of two members; Simon Woldemichael and Xuijia Wu. Links to potential libraries and free API's to be used are linked below.
 
+<p align="center"><strong><u>Note: In the proposal, we stated that we would be using AR.js as a supplement to the assignment, but as advised in previous projects, we should keep the application contained within itself and should not apply the use of external features that only complement the application and are not core aspects of it. We, therefore, did not use AR.js</u></strong></p>
+
 ### Tools Used
   - [A-Frame](https://aframe.io/) :a:
   - [Youtube API](https://developers.google.com/youtube/iframe_api_reference) :fast_forward:
   - [Twitter API](https://dev.twitter.com/web/javascript) :baby_chick:
   - [Snowrap (Reddit API Wrapper)](https://github.com/not-an-aardvark/snoowrap) :snowman:
-  - [Node.js](https://nodejs.org/en/) :checkered_flag:
-  - [Material Design Lite](https://getmdl.io/)
+  - [Node.js](https://nodejs.org/en/) :checkered_flag: (used to serve the Web Real Time Connection environment)
+  - [Material Design Lite](https://getmdl.io/) :milky_way:
 
 ### Contributors
   - [Xujia Wu](https://github.com/carolynwu)
@@ -43,7 +45,7 @@
 	  The Same Origin Policy disallows reading the remote resource at %RESOURCE%.
 	  This can be fixed by moving the resource to the same domain or enabling CORS.
 	  ```
-	means we can't update the content of our <a-scene> components with data that doesn't exist on our domain. So, adding images and videos from anywhere outside of the local scope of the application is not possible....
+	means we can't update the content of our <a-scene> components with data that doesn't exist on our domain. So, adding images and videos from anywhere outside of the local scope of the application, 100% of the time, is not possible. 
 	[WITHOUT this Chrome plugin that enables the Same Origin Policy](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en)
   - We expect to have the same device compatibility issues that occurred during the first project that was completed for this course.
   - Compability
@@ -51,7 +53,7 @@
   - Setting up Node to support a WebRTC server
   - YouTube's API prevents dynamic sourcing of videos to inner canvas elements and A-Frame is unable to draw an embed or live video stream into the scene
   - Rendering text to the scene is computationally expensive enough, rendering videos is nearly impossible
-  - Attempting to <i-frame></i-frame> a YouTube embed instead of sourcing it with <a-video></a-video> is impossible by the limitations of the library
+  - Attempting to `<i-frame></i-frame>` a YouTube embed instead of sourcing it with <a-video></a-video> is impossible by the limitations of the library
   - The boilerplate practially set us up to run in circles, solving and causing problems until we decided to split all of the scenes up
   - [Deploying to Heroku apparently takes two hours](https://github.com/networked-aframe/networked-aframe/blob/master/docs/hosting-networked-aframe-on-a-server.md)
   
@@ -63,5 +65,27 @@
   - [A-Frame Material Design Plugin](https://github.com/etiennepinchon/aframe-material)
   - [Networked A-Frame](https://github.com/networked-aframe/networked-aframe)
   - [A-Rounded components](https://github.com/etiennepinchon/aframe-rounded)
+  
 ### References
   - Please visit our [Trello Board](https://trello.com/b/GRBMbBuo/cs-4331-002-virtual-reality-project-3) to see references and sources
+  
+<h2 align="center">Features</h2>
+
+<h3 align="center">Material Design Aesthetic :milky_way:</h3>
+  
+  - Images and references here
+
+  
+<h3 align="center">YouTube API Interface :fast_forward:</h3>
+ 
+  - Images and references here	
+ 
+<h3 align="center">Flickr API Interface :baby_chick:</h3>
+ 
+  - Images and references here
+
+<h2 align="center">Concepts Worth Noting :book:</h2>
+
+<h3 align="center">Linear Interpolation :chart_with_upwards_trend:</h3>
+
+> Credit for external components and JavaScript API wrappers go to their respective owners and creators :thumbsup:
