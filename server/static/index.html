@@ -100,8 +100,10 @@
 			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking)-->
 			<a-camera raycaster="far: 150; objects: .intersectable" look-controls-enabled wasd-controls-enabled></a-camera>
 			
+			
 			<!-- BEGIN FLICKR SECTION -->
 			<!-- Make keyboard and display an input box for Flickr search query -->
+			<a-entity id="flickr-env" rotation="0 -90 0" position="6.5 0 0">
 			<a-keyboard id="flickr-keyboard"></a-keyboard>
 			
 			<!-- When the user clicks the input box, the keyboard will be scaled and repositioned. Unable to do this with attribute tags for some reason -->
@@ -113,6 +115,7 @@
 			<!-- Note: Since only three videos are being shown, the last two of every attribute have visible="false" -->
 			<a-rounded id="flickr-interface" width="9.1" height="6.2" position="-3.49 1.567 -3.44" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
 			<a-form>
+				<!-- Help button -->
 				<a-button onClick="onFlickerHelpButtonClick()" id="flickr-help-button" position="-1.56 -0.32 2.469" rotation="0 45 0" name="flickr" value="Need Help??" color="#FFFFFF"></a-button>
 				
 				<!-- Video Thumbnails -->
@@ -131,6 +134,7 @@
 				
 			</a-form>
 			</a-rounded>
+			</a-entity>
 			
 			<!-- Toast pop-up -->
 			<a-toast id="flickr-toast" duration="2000" autoshow="false" font="kelsonsans" message="Search for an image!" action="Got it"></a-toast>
