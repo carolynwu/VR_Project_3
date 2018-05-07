@@ -17,6 +17,7 @@
   - [Twitter API](https://dev.twitter.com/web/javascript) :baby_chick:
   - [Snowrap (Reddit API Wrapper)](https://github.com/not-an-aardvark/snoowrap) :snowman:
   - [Node.js](https://nodejs.org/en/) :checkered_flag:
+  - [Material Design Lite](https://getmdl.io/)
 
 ### Contributors
   - [Xujia Wu](https://github.com/carolynwu)
@@ -61,6 +62,6 @@
 ### External asset sources
   - [A-Frame Material Design Plugin](https://github.com/etiennepinchon/aframe-material)
   - [Networked A-Frame](https://github.com/networked-aframe/networked-aframe)
-  
+  - [A-Rounded components](https://github.com/etiennepinchon/aframe-rounded)
 ### References
   - Please visit our [Trello Board](https://trello.com/b/GRBMbBuo/cs-4331-002-virtual-reality-project-3) to see references and sources
