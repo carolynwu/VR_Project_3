@@ -33,8 +33,8 @@
 	<script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
 	
 	<script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
-	<script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
 	<script src="https://cdn.rawgit.com/etiennepinchon/aframe-material/master/dist/aframe-material.min.js"></script>
+	<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
 	
 	<!-- <script src="https://unpkg.com/aframe-video-illumination-component/dist/aframe-video-illumination-component.min.js"></script> -->
 	
@@ -53,10 +53,9 @@
 </head>
 	<body>
 		<!-- Begin A-Scene -->
-		<a-scene cursor="rayOrigin: mouse" networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
+		<a-scene environment="preset: tron" cursor="rayOrigin: mouse;" networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
 			<!-- Define assets -->
 			<a-assets>
-				<img id="grid" src="https://i.imgur.com/25P1geh.png" crossorigin="anonymous" />
 
 				<!-- Templates -->
 				<!-- Avatar. Must be HTML <template> tagged -->
@@ -81,10 +80,7 @@
 			
 			<!-- Setup skybox gradient -->
 			<a-gradient-sky material="shader: gradient; topColor: 0 0 204; bottomColor: 0 153 255;"></a-gradient-sky>
-			
-			<!-- Ground plane -->
-			<a-entity position="0 0 0" geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6;"></a-entity>
-			
+						
 			<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking)-->
 			<a-camera raycaster="far: 150; objects: .intersectable" look-controls wasd-controls></a-camera>
 			
@@ -150,7 +146,8 @@
 				
 				function stopVideo(){
 					var video_player = document.querySelector('#videoPlayer');
-					var my_scene = document.querySelector('#a-scene');
+					var my_scene = document.querySelector('a-scene');
+					my_scene.remove(video_player);
 				}
 			</script>
 			
