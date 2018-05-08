@@ -55,7 +55,7 @@
 </head>
 	<body>
 		<!-- Begin A-Scene -->
-		<a-scene fog="color: #999999; density: .030; far: 10; near: 1; type: exponential;" environment="preset: japan; skyType: atmosphere; ground: hills; groundColor: #FF0084; groundColor2: #1d75ce; dressingAmount: 50" networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
+		<a-scene fog="color: #999999; density: .030; far: 10; near: 1; type: exponential;" environment="preset: japan; skyType: atmosphere; ground: hills; groundColor: #FF0084; groundColor2: #1d75ce; dressingAmount: 4" networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
 			<!-- Define assets -->
 			<a-assets>
 				<img id="grid" src="https://i.imgur.com/25P1geh.png" crossorigin="anonymous" />
@@ -98,10 +98,10 @@
 			<a-input id="flickr-input" onClick="styleFlickrKeyboard()" position="-0.76 1.453 -2.8" rotation="-21.4 0 0" placeholder="Input image search query" color="black" width="1" scale="2.163 2.163 2.163"></a-input>
 			
 			<!-- Image viewing interface -->
-			<a-entity id="interface-title-2" text="value:Flickr Image Search; color:#FF0084; shader: msdf; font:monoid;" scale="15 15 15" position="4.531 7.283 -3.42"></a-entity>
+			<a-entity id="interface-title-2" text="value:Flickr Image Search; color:#FF0084; shader: msdf; font: monoid;" scale="15 15 15" position="4.377 5.864 -3.44"></a-entity>
 			
 			<!-- Note: Since only three videos are being shown, the last two of every attribute have visible="false" -->
-			<a-rounded id="flickr-interface" width="9.1" height="6.2" position="-3.49 1.567 -3.44" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
+			<a-rounded scale="2 2 2" id="flickr-interface" width="9.1" height="6.2" position="-8.44 1.567 -3.44" height="3.1" radius="0.05" rotation="0 0 0" >
 			<a-form>
 				<!-- Help button -->
 				<a-button onClick="onFlickrHelpButtonClick()" id="flickr-help-button" position="-1.56 -0.32 2.469" rotation="0 45 0" name="flickr" value="Need Help??" color="#FFFFFF"></a-button>
