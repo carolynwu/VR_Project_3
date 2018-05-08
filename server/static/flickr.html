@@ -39,8 +39,8 @@
 	<script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
 	
 	<script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
-	<script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
 	<script src="https://cdn.rawgit.com/etiennepinchon/aframe-material/master/dist/aframe-material.min.js"></script>
+	<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
 	
 	<!-- Helper script to ensure that all new players that join the scene are spawned within the same place -->
 	<script src="/js/spawn-in-circle.component.js"></script>
@@ -55,7 +55,7 @@
 </head>
 	<body>
 		<!-- Begin A-Scene -->
-		<a-scene networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
+		<a-scene fog="color: #999999; density: .030; far: 10; near: 1; type: exponential;" environment="preset: japan; skyType: atmosphere; ground: hills; groundColor: #FF0084; groundColor2: #1d75ce; dressingAmount: 50" networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
 			<!-- Define assets -->
 			<a-assets>
 				<img id="grid" src="https://i.imgur.com/25P1geh.png" crossorigin="anonymous" />
@@ -107,18 +107,18 @@
 				<a-button onClick="onFlickrHelpButtonClick()" id="flickr-help-button" position="-1.56 -0.32 2.469" rotation="0 45 0" name="flickr" value="Need Help??" color="#FFFFFF"></a-button>
 				
 				<!-- Images -->
-				<a-image width="2" height="2" id="flickrimage1" position="1.066 5.099 0.010" material="shader: standard"></a-image>
-				<a-image width="2" height="2" id="flickrimage2" position="1.066 3.083 0.010" material="shader: standard"></a-image>
-				<a-image width="2" height="2" id="flickrimage3" position="1.066 1.056 0.010" material="shader: standard"></a-image>
-				<a-image width="2" height="2" id="flickrimage4" position="3.446 5.099 0.010" material="shader: standard"></a-image>
-				<a-image width="2" height="2" id="flickrimage5" position="3.446 3.083 0.010" material="shader: standard"></a-image>
-				<a-image width="2" height="2" id="flickrimage6" position="3.446 1.056 0.010" material="shader: standard"></a-image>
-				<a-image width="2" height="2" id="flickrimage7" position="5.711 5.099 0.010" material="shader: standard"></a-image>
-				<a-image width="2" height="2" id="flickrimage8" position="5.711 3.083 0.010" material="shader: standard"></a-image>
-				<a-image width="2" height="2" id="flickrimage9" position="5.711 1.056 0.010" material="shader: standard"></a-image>
-				<a-image width="2" height="2" id="flickrimage10" position="8.025 5.099 0.010" material="shader: standard"></a-image>
-				<a-image width="2" height="2" id="flickrimage11" position="8.025 3.083 0.010" material="shader: standard"></a-image>
-				<a-image width="2" height="2" id="flickrimage12" position="8.025 1.056 0.010" material="shader: standard"></a-image>
+				<a-image width="2" height="2" id="flickrimage1" position="1.066 5.099 0.010" material="shader: flat"></a-image>
+				<a-image width="2" height="2" id="flickrimage2" position="1.066 3.083 0.010" material="shader: flat"></a-image>
+				<a-image width="2" height="2" id="flickrimage3" position="1.066 1.056 0.010" material="shader: flat"></a-image>
+				<a-image width="2" height="2" id="flickrimage4" position="3.446 5.099 0.010" material="shader: flat"></a-image>
+				<a-image width="2" height="2" id="flickrimage5" position="3.446 3.083 0.010" material="shader: flat"></a-image>
+				<a-image width="2" height="2" id="flickrimage6" position="3.446 1.056 0.010" material="shader: flat"></a-image>
+				<a-image width="2" height="2" id="flickrimage7" position="5.711 5.099 0.010" material="shader: flat"></a-image>
+				<a-image width="2" height="2" id="flickrimage8" position="5.711 3.083 0.010" material="shader: flat"></a-image>
+				<a-image width="2" height="2" id="flickrimage9" position="5.711 1.056 0.010" material="shader: flat"></a-image>
+				<a-image width="2" height="2" id="flickrimage10" position="8.025 5.099 0.010" material="shader: flat"></a-image>
+				<a-image width="2" height="2" id="flickrimage11" position="8.025 3.083 0.010" material="shader: flat"></a-image>
+				<a-image width="2" height="2" id="flickrimage12" position="8.025 1.056 0.010" material="shader: flat"></a-image>
 				
 			</a-form>
 			</a-rounded>
