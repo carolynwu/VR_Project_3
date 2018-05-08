@@ -90,7 +90,7 @@
 			
 			<!-- BEGIN YOUTUBE SECTION -->
 			<!-- Make keyboard and display an input box for youtube search query -->
-			<a-entity keyboard="" physical-keyboard="true" id="youtube-keyboard"></a-entity>
+			<a-entity keyboard="" id="youtube-keyboard"></a-entity>
 			
 			<!-- When the user clicks the input box, the keyboard will be scaled and repositioned. Unable to do this with attribute tags for some reason -->
 			<a-input id="youtube-input" onClick="styleYoutubeKeyboard()" position="6.862 1.235 -0.96" rotation="-21.4 -90 0" placeholder="Input video search query" color="black" width="1" scale="2.163 2.163 2.163"></a-input>
@@ -104,9 +104,9 @@
 				<a-button id="youtube-help-button" position=-1.56 -0.32 2.469" rotation="0 45 0" name="youtube" value="Need Help?" color="#FFFFFF"></a-button>
 				
 				<!-- Video Thumbnails -->
-				<a-image id="image1" position=".559 2.573 .010" material="shader: standard"></a-image>
-				<a-image id="image2" position=".552 1.546 .008" material="shader: standard"></a-image>
-				<a-image id="image3" position=".548 .535 .006" material="shader: standard"></a-image>
+				<a-image onClick="updateVideo(1)" id="image1" position=".559 2.573 .010" material="shader: standard"></a-image>
+				<a-image onClick="updateVideo(2)" id="image2" position=".552 1.546 .008" material="shader: standard"></a-image>
+				<a-image onClick="updateVideo(3)" id="image3" position=".548 .535 .006" material="shader: standard"></a-image>
 				<a-image id="image4" position="" visible="false" material="shader: standard"></a-image>
 				<a-image id="image5" position="" visible="false" material="shader: standard"></a-image>
 				
@@ -123,17 +123,44 @@
 				<a-text id="description3" color="black" font="kelsonsans" wrap-count="40" position="1.161 .384 0" width="2"></a-text>
 				<a-text id="description4" visible="false"></a-text>
 				<a-text id="description5" visible="false"></a-text>
+				
+				<!-- Hidden Video URLs -->
+				<a-text id="urlstore1" visible="false"></a-text>
+				<a-text id="urlstore2" visible="false"></a-text>
+				<a-text id="urlstore3" visible="false"></a-text>
+				<a-text id="urlstore4" visible="false"></a-text>
+				<a-text id="urlstore5" visible="false"></a-text>
+				
 			</a-form>
 			</a-rounded>
-
+			
+			<!-- Video Player -->
+			<a-video class="intersectable" src="" onClick="stopVideo()" id="videoPlayer" width="6" height="3" rotation="0 -26.9 0" position="5.371 2.577 -4.94"></a-video>
+			
+			<script>
+				// Select the video player and update the source to play the video
+				function updateVideo(ix){ 
+					console.log(ix);
+					// var selected_source = document.getElementById('urlstore'+ix).getAttribute('value');
+					// console.log(selected_source);
+					var video_name = 'video/'+ix+'.mkv';
+					var play_video = document.querySelector('#videoPlayer');
+					play_video.setAttribute('src', video_name);
+				}
+				
+				function stopVideo(){
+					var video_player = document.querySelector('#videoPlayer');
+					var my_scene = document.querySelector('#a-scene');
+				}
+			</script>
+			
 			<!-- Toast pop-up -->
 			<a-toast id="youtube-toast" duration="2000" autoshow="false" font="kelsonsans" message="Search for a video!" action="Got it"></a-toast>
 			
-			<!-- Video Player <a-video></a-video>-->
 			<!-- END YOUTUBE SECTION -->
 			
 			<!-- Begin networking setup for RTC -->
-			<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls mouse-cursor>
+			<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls>
 				<a-sphere class="head" visible="false" random-color></a-sphere>
 			</a-entity>
 
