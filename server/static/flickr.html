@@ -127,7 +127,15 @@
 			 }
 			</script>
 			<!-- END FLICKR SECTION -->
-			
+
+			<a-button  id="flickr-help-button" position="9.908 5.745 2.8" rotation="0 320 0" name="flickr" value="Back" color="#FFFFFF"onClick="goBack()"></a-button>
+			<script>
+                function goBack() {
+                    window.open("./hub?room=default.html", "_self");
+                }
+			</script>
+
+
 			<!-- Begin networking setup for RTC -->
 			<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls mouse-cursor>
 				<a-sphere class="head" visible="false" random-color></a-sphere>

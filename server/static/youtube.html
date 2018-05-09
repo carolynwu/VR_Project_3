@@ -125,6 +125,7 @@
 				<a-text id="urlstore5" visible="false"></a-text>
 				
 			</a-form>
+
 			</a-rounded>
 			
 			<!-- Video Player -->
@@ -152,8 +153,16 @@
 			<a-toast id="youtube-toast" duration="2000" autoshow="false" font="kelsonsans" message="Search for a video!" action="Got it"></a-toast>
 			
 			<!-- END YOUTUBE SECTION -->
-			
-			<!-- Begin networking setup for RTC -->
+			<a-button id="back_button" position="6.602 2.073 3.502" rotation="0 225 0" name="youtube" value="Back" color="#FFFFFF" onClick="goBack()"></a-button>
+
+			<script>
+			function goBack() {
+			   window.open("./hub.html?room=default", "_self");
+			}
+			</script>
+
+
+		<!-- Begin networking setup for RTC -->
 			<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls>
 				<a-sphere class="head" visible="false" random-color></a-sphere>
 			</a-entity>
