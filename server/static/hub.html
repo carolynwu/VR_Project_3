@@ -49,7 +49,10 @@
 		<a-scene environment="preset: contact; lighting: point; lightPosition: 0 2 0; fog: 0; skyType: atmosphere; lightPosition: 0 .2 0;"  dynamic-room networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
 			<!-- Define assets -->
 			<a-assets>
-
+				<!-- Images for warps -->
+				<img id="ytThumbnail" src="img/youtube_warp.png">
+				<img id="flickrThumbnail" src="img/flickr_warp.png">
+				
 				<!-- Templates -->
 				<!-- Avatar. Must be HTML <template> tagged -->
 				<template id="avatar-template">
@@ -92,7 +95,13 @@
 				<a-button buttonColor="#2979ff" onClick="loadReddit()" position=".385 2.333 0" width="3" name="stuff" value="Reddit"></a-button>
 			  </a-form>
 			</a-entity>
-
+			
+			<!-- Display Warps -->
+			<a-entity id="warps" position="0 0 4.306">
+				<a-entity class="intersectable" position="6.760 2.284 -2.55" rotation="0 -90 0" link="title: Youtube; href: ./youtube.html; image: #ytThumbnail; highlightedColor: #ffffff; color: #4076fd;"></a-entity>
+				<a-entity class="intersectable" position="6.760 2.284 1.396" rotation="0 90 0" link="title: Flickr; href: ./flickr.html; image: #flickrThumbnail; highlightedColor: #ffffff; color: #4076fd;"></a-entity>
+			</a-entity>
+			
 			<!-- Begin networking setup for RTC -->
 			<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls mouse-cursor>
 				<a-sphere class="head" visible="false" random-color></a-sphere>
