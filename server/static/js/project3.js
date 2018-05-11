@@ -1,23 +1,3 @@
-console.log("Networking player model schema...");
-// Player model schema
-NAF.schemas.add({
-template: '#avatar-template',
-components: [
-  'position',
-  'rotation',
-  {
-	selector: '.head',
-	component: 'material',
-	property: 'color'
-  },
-  {
-	selector: '.nametag',
-	component: 'text',
-	property: 'value'
-  }
-]
-});
-
 // Set up functions to provide redirection
 function loadFlickr(){
 	window.open("./flickr.html", "_self");

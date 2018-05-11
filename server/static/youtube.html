@@ -120,8 +120,24 @@
 			
 			<!-- Back Button -->
 			<a-button id="youtube-back-button" position="6.602 2.073 3.502" rotation="0 225 0" name="youtube-back" value="Back" color="#FFFFFF" onClick="goBack()"></a-button>
-			
 			<!-- END YOUTUBE SECTION -->
+			
+			<script>
+			console.log("Networking player model schema...");
+			// Player model schema
+			NAF.schemas.add({
+			template: '#avatar-template',
+			components: [
+				'position',
+				'rotation',
+				{
+					selector: '.head',
+					component: 'material',
+					property: 'color'
+					}
+				]
+			});
+			</script>
 			
 			<!-- Begin networking setup for RTC -->
 			<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls>
