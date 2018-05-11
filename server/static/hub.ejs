@@ -16,15 +16,11 @@
 		AFRAME.ASSETS_PATH = "./assets";
 		
 		// Set up functions to provide redirection
-		function loadFlickr(){
-			window.open("./flickr.html", "_self");
-		}
-		function loadYoutube(){
-			window.open("./youtube.html", "_self");
-		}
-		function loadReddit(){
-			console.log('unimplemented');
-		}
+
+
+
+
+
 	</script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
@@ -44,6 +40,7 @@
 	<script src="/js/dynamic-room.component.js"></script>
 	
 </head>
+
 	<body>
 		<!-- Begin A-Scene -->
 		<a-scene environment="preset: contact; lighting: point; lightPosition: 0 2 0; fog: 0; skyType: atmosphere; lightPosition: 0 .2 0;"  dynamic-room networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
@@ -54,7 +51,7 @@
 				<!-- Avatar. Must be HTML <template> tagged -->
 				<template id="avatar-template">
 					<a-entity class="avatar">
-						<a-entity class="nametag" text="value: Hello World; align:center;" position="0 .7 0" rotation="0 180 0" scale="8 8 8"></a-entity>
+						<a-entity class="nametag" text="value: <%= data.username %>; align:center;" position="0 .7 0" rotation="0 180 0" scale="8 8 8"></a-entity>
 						<a-sphere class="head" color="#ffffff" scale="0.45 0.5 0.4"></a-sphere>
 						<a-entity class="face" position="0 0.05 0">
 							<a-sphere class="eye" color="#efefef" position="0.16 0.1 -0.35" scale="0.12 0.12 0.12">
@@ -87,9 +84,11 @@
 			<!-- BEGIN FORM -->
 			<a-entity rounded="width: 3; height: 3; radius: 0.2; topRightRadius: 0.4; bottomLeftRadius: 0.4; color: #18ffff; opacity: 0.4;" position="-1.39 .5 -2.5">
 			  <a-form>
-				<a-button buttonColor="#2979ff" onClick="loadYoutube()" position=".385 1 0" width="3" name="stuff" value="YouTube"></a-button>
-				<a-button buttonColor="#2979ff" onClick="loadFlickr()" position=".385 1.666 0" width="3" name="stuff" value="Flickr"></a-button>
-				<a-button buttonColor="#2979ff" onClick="loadReddit()" position=".385 2.333 0" width="3" name="stuff" value="Reddit"></a-button>
+				  <a-button buttonColor="#2979ff"   onclick="window.location.href='/youtube'" position=".385 1 0" width="3" name="stuff" value="YouTube"></a-button>
+
+				  <a-button buttonColor="#2979ff"  onclick="window.location.href='/flickr'"position=".385 1.666 0" width="3" name="stuff" value="Flickr"></a-button>
+
+				  <a-button buttonColor="#2979ff"  onclick="window.location.href='/chat'" position=".385 2.333 0" width="3" name="stuff" value="Chat"></a-button>
 			  </a-form>
 			</a-entity>
 
@@ -98,6 +97,7 @@
 				<a-sphere class="head" visible="false" random-color></a-sphere>
 				<a-entity id="userName" class="nametag"></a-entity>
 			</a-entity>
+			<a-text position="1 1 0" wrap-count="60"  color="#FFFFFF" font="sourcecodepro" scale="3 3 3" value="<%= data.username %>"></a-text>
 
 		</a-scene>
 		<!-- More utilities -->

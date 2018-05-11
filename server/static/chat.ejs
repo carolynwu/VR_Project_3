@@ -1,0 +1,188 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CS 4331-002: Project 3 by Xujia Wu and Simon Woldemichael</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="CS 4331-002 Special Topics in CS: Virtual Reality - Project 3">
+	<meta name="keywords" content="Virtual,Reality,Project">
+	<meta name="author" content="Xujia Wu and Simon Woldemichael">
+
+	<!-- script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script -->
+	<!-- a-frame-materials keyboard has only been tested with A-Frame v0.6.1 -->
+	<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+	<script src="/build.js"></script>
+	<script>window.NAF || document.write('<script src="https://unpkg.com/networked-aframe/dist/networked-aframe.min.js">\x3C/script>')</script>
+	<script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
+	<!--script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script> -->
+
+
+	<script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+	<script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+	<script src="https://cdn.rawgit.com/etiennepinchon/aframe-material/master/dist/aframe-material.min.js"></script>
+
+	<!-- Helper script to ensure that all new players that join the scene are spawned within the same place -->
+	<script src="/js/spawn-in-circle.component.js"></script>
+	<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+
+	<!-- Support login and usernames -->
+	<script src="/js/dynamic-room.component.js"></script>
+
+	<!-- Globals for simplicity -->
+	<script type="text/javascript">
+        AFRAME.ASSETS_PATH = "./assets";
+        var search_query = '';
+        var make_youtube_query = false;
+        var text_position = {x:.5, y:2.955, z:0};
+        var message_id_number = 1;
+	</script>
+
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+<script src="/easyrtc/easyrtc.js"></script>
+
+<!-- Begin A-Scene -->
+<a-scene environment="preset:threetowers; grid: cross" networked-scene="room: dev; debug: true; adapter: wseasyrtc;">
+	<!-- Define assets -->
+	<a-assets>
+		<img id="grid" src="https://i.imgur.com/25P1geh.png" crossorigin="anonymous" />
+		<img id="sky" src="http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
+
+		<!-- Templates -->
+		<!-- Avatar. Must be HTML <template> tagged -->
+		<template id="avatar-template">
+			<a-entity class="avatar">
+				<a-entity class="nametag" text="value: <%= data.username %>" position="0 .7 0" rotation="0 180 0" scale="8 8 8"></a-entity>
+				<a-torus class="head" color="#ffffff" scale="0.45 0.5 0.4"></a-torus>
+				<a-entity class="face" position="0 0.05 0"></a-entity>
+				<a-sphere class="eye" color="#efefef" position="0.16 0.1 -0.35" scale="0.12 0.12 0.12">
+					<a-sphere class="pupil" color="#000" position="0 0 -1" scale="0.2 0.2 0.2"></a-sphere>
+				</a-sphere>
+				<a-sphere class="eye" color="#efefef" position="-0.16 0.1 -0.35" scale="0.12 0.12 0.12">
+					<a-cone class="pupil" color="#000" position="0 0 -1" scale="0.2 0.2 0.2"></a-cone>
+				</a-sphere>
+				</a-torus>
+			</a-entity>
+		</template>
+	</a-assets>
+
+	<!-- Laser controls entity for WebVR compatible headsets? -->
+	<a-entity laser-controls="hand: right"></a-entity>
+
+	<!-- Setup skybox gradient -->
+	<a-gradient-sky material="shader: gradient; topColor: 0 0 204; bottomColor: 0 153 255;"></a-gradient-sky>
+
+	<!--Define a raycaster to track the position of the mouse (i.e. where the user is looking)-->
+	<a-camera raycaster="far: 150; objects: .intersectable" look-controls-enabled wasd-controls-enabled mouse-cursor></a-camera>
+
+	<!-- Make keyboard and display an input box for search query -->
+	<a-keyboard></a-keyboard>
+
+	<script type="text/javascript">
+        function styleKeyboard(){
+            // Update the keyboard's settings since it allow outline changes
+            var key_styler = document.querySelector("a-keyboard");
+            key_styler.setAttribute('position', {x: -2.15, y: 0.015, z: -2.00});
+            key_styler.setAttribute('scale', {x: 3.519, y: 3.519, z: 3.519});
+        }
+	</script>
+	<!-- When the user clicks the input box, the keyboard will be scaled and repositioned. Unable to do this with attribute tags for some reason -->
+	<a-input onClick="styleKeyboard()" position="-.65 1.069 -3.35" rotation="-21.4 0 0" placeholder="Start Talking..." color="black" width="1" scale="2.163 2.163 2.163"></a-input>
+
+
+	<!-- Help display form -->
+	<a-rounded color="black" position="-1.18 1.222 -3.44" width="4" height="3.1" radius="0.05" rotation="0 0 0" scale="0.816 0.816 0.816" >
+		<a-form id="chatbox">
+		</a-form>
+	</a-rounded>
+	<script>
+
+	</script>
+
+	<!-- Toast pop-up -->
+	<a-toast message="This is a toast" action="Got it"></a-toast>
+
+	<!-- Ground plane -->
+	<!--a-entity position="0 0 0" geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #grid; repeat: 1000 1000; transparent: true;"></a-entity-->
+
+	<!-- Begin networking setup for RTC -->
+	<a-entity id="player" networked="template:#avatar-template;attachTemplateToLocal:false;" camera="userHeight: 1.6" spawn-in-circle="radius:3" wasd-controls look-controls>
+		<a-sphere class="head" visible="false" random-color></a-sphere>
+		<a-entity id="userName" class="nametag"></a-entity>
+	</a-entity>
+
+	<!-- This is commented it out because we're using a gradient "sky" and ground plane -->
+	<!-- a-sky src="#sky" rotation="0 -90 0"></a-sky>-->
+
+	<a-text position="1 1 0" wrap-count="60"  color="#FFFFFF" font="sourcecodepro" scale="3 3 3" value="<%= data.username %>"></a-text>
+
+	<!-- Lighting -->
+	<a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+	<a-entity light="color: #ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+</a-scene>
+<!-- This script and all other utilities should be moved -->
+<script>
+    // Define custom schema for syncing avatar color, set by random-color
+    NAF.schemas.add({
+        template: '#avatar-template',
+        components: [
+            'position',
+            'rotation',
+            {
+                selector: '.head',
+                component: 'material',
+                property: 'color'
+            }
+        ]
+    });
+    // Called by Networked-Aframe when connected to server
+    function onConnect () {
+        console.log("onConnect", new Date());
+    }
+</script>
+
+<!-- This script and all other utilities should be moved -->
+<script type="text/javascript">
+    let toast = document.querySelector('a-toast');
+    let input_box = document.querySelector('a-input');
+    let keyboard = document.querySelector("a-keyboard");
+    // Show toast pop-up when button is clicked, and close when the toast is clicked
+    toast.addEventListener('actionclick', ()=>{
+        toast.hide();
+    })
+
+    keyboard.addEventListener('input', (e)=>{
+        search_query += e.detail;
+    //console.log(search_query);
+    });
+    //When the user presses the enter key
+    //   keyboard.addEventListener('enter', (e)=>{
+    //    console.log("Enter key pressed!")
+    //});
+
+    // When the user presses backspace
+    keyboard.addEventListener('backspace', (e)=>{
+        input_box.value = input_box.value.substring(0, input_box.value.length - 1);
+    search_query = search_query.substring(0, search_query.length - 1);
+    //console.log(input_box.value);
+    // console.log(search_query);
+    });
+    // Listen for keyboard close
+    keyboard.addEventListener('dismiss', (e)=>{
+        console.log("Dismiss: ", e);
+    keyboard.dismiss();
+    console.log(input_box.value);
+    var position_string = text_position.x + " " + text_position.y + " " + text_position.z;
+    document.querySelector("a-form").innerHTML +="<a-text id='text" + message_id_number +  "' value='" + input_box.value + "' position='" + position_string +"'></a-text>";
+    text_position.y -= .317;
+    console.log(text_position);
+    message_id_number++;
+    search_query = ''; // Reset query for the next search
+    input_box.value="";
+    });
+
+
+
+</script>
+</body>
+</html>
