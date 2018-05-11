@@ -10,22 +10,6 @@
 	<!-- aframe-materials keyboard has only been tested with A-Frame v0.6.1 -->
 	<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
 	<!--<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>-->
-				
-	<!-- Globals for simplicity -->
-	<script type="text/javascript">
-		AFRAME.ASSETS_PATH = "./assets";
-		
-		// Set up functions to provide redirection
-		function loadFlickr(){
-			window.open("./flickr.html", "_self");
-		}
-		function loadYoutube(){
-			window.open("./youtube.html", "_self");
-		}
-		function loadReddit(){
-			console.log('unimplemented');
-		}
-	</script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -42,6 +26,9 @@
 	
 	<!-- Support login and usernames -->
 	<script src="/js/dynamic-room.component.js"></script>
+
+	<!-- More utilities -->
+	<script defer src="/js/project3.js"></script>
 	
 </head>
 	<body>
@@ -92,7 +79,7 @@
 			  <a-form>
 				<a-button buttonColor="#2979ff" onClick="loadYoutube()" position=".385 1 0" width="3" name="stuff" value="YouTube"></a-button>
 				<a-button buttonColor="#2979ff" onClick="loadFlickr()" position=".385 1.666 0" width="3" name="stuff" value="Flickr"></a-button>
-				<a-button buttonColor="#2979ff" onClick="loadReddit()" position=".385 2.333 0" width="3" name="stuff" value="Reddit"></a-button>
+				<a-button buttonColor="#2979ff" onClick="loadChat()" position=".385 2.333 0" width="3" name="stuff" value="Chat"></a-button>
 			  </a-form>
 			</a-entity>
 			
@@ -109,8 +96,5 @@
 			</a-entity>
 
 		</a-scene>
-		<!-- More utilities -->
-		<script defer type="text/javascript" src="/js/project3.js"></script>
-	
 	</body>
 </html>

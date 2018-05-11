@@ -18,6 +18,17 @@ components: [
 ]
 });
 
+// Set up functions to provide redirection
+function loadFlickr(){
+	window.open("./flickr.html", "_self");
+}
+function loadYoutube(){
+	window.open("./youtube.html", "_self");
+}
+function loadChat(){
+	window.open("./chat.html", "_self");
+}
+		
 // Called by Networked-Aframe when connected to server
 function onConnect () {
 	console.log("onConnect", new Date());
