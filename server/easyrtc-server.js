@@ -1,10 +1,13 @@
 // Load required modules
-var http    = require("http");              // http server core module
+var http = require("http");              // http server core module
 var express = require("express");           // web framework external module
 var serveStatic = require('serve-static');  // serve static files
 var socketIo = require("socket.io");        // web socket external module
 var easyrtc = require("easyrtc");               // EasyRTC external module
+var bodyParser=require("body-parser");
 
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+/
 // Set process name
 process.title = "node-easyrtc";
 
@@ -13,7 +16,47 @@ var port = process.env.PORT || 8081;
 
 // Setup and configure Express http server. Expect a subfolder called "static" to be the web root.
 var app = express();
-app.use(serveStatic('server/static', {'index': ['index.html']}));
+
+app.set("view engine", "ejs");
+
+// middleware is responsible for serving the static
+app.use(express.static("server/static"));
+
+var path = require('path');
+app.set('views', path.join(__dirname, '../server/static'));
+
+app.get("/",function(req,res){
+    res.render("index");
+});
+
+
+app.get("/hub",function(req,res){
+    res.render("hub",{data:req.query});
+});
+
+app.post("/hub",urlencodedParser,function(req,res){
+  res.render("hub",{data:req.body});
+});
+
+app.get("/chat",function(req,res){
+    res.render("chat",{data:req.query});
+});
+
+app.post("/chat",function(req,res){
+    res.render("chat",{data:req.body});
+});
+
+
+
+app.get("/flickr",function(req,res){
+    res.render("flickr");
+});
+
+app.get("/youtube",function(req,res){
+    res.render("youtube");
+});
+
+//app.use(serveStatic('server/static', {'index': ['index.html']}));
 
 // Start Express http server
 var webServer = http.createServer(app);

@@ -26,9 +26,11 @@
   },
   "repository": "networked-aframe/networked-aframe",
   "dependencies": {
-    "easyrtc": "1.1.0",
-    "express": "^4.10.7",
     "aframe-lerp-component": "^1.1.0",
+    "body-parser": "^1.18.2",
+    "easyrtc": "1.1.0",
+    "ejs": "^2.6.1",
+    "express": "^4.10.7",
     "serve-static": "^1.8.0",
     "socket.io": "^1.4.5",
     "socket.io-client": "^1.4.5"
